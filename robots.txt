@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drs80.github.io/w2study/sitemap.xml
