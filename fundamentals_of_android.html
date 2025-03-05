@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="अगर आप android application development सीखना चाहते हैं, तो आपको इसके मूलभूत सिद्धांतों (Fundamentals) को समझना जरूरी है। नीचे हम android development के महत्वपूर्ण पहलुओं को विस्तार से समझेंगे।">
+    <meta name="keywords" content="fundamentals of android in hindi, fundamentals of android application development in hindi, android application development fundamentals in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+     <!-- SEO Code -->
+    <link rel="canonical" href="https://deepanshu8057.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://deepanshu8057.github.io/w2study/"
+}
+</script>
+    
+    <title>Fundamentals of Android in Hindi (Development of Android Applications)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: yellow;
+            font-size: 20px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 16px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://deepanshu8057.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise">Advertise with Us</a></li>
+                <li><a href="notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br><br>   
+    
+  <h1>Fundamentals of Android in Hindi - एंड्रॉइड एप्लिकेशन डेवलपमेंट के मूलभूत सिद्धांत </h1>
+  <p>अगर आप android application development सीखना चाहते हैं, तो आपको इसके मूलभूत सिद्धांतों (Fundamentals) को समझना जरूरी है। नीचे हम android development के महत्वपूर्ण पहलुओं को विस्तार से समझेंगे।</p>
+
+  <h2>1. Android क्या है?</h2>
+  <p>Android एक open-source मोबाइल operating system है, जिसे Google ने विकसित किया है। यह Linux Kernel पर आधारित है और मुख्य रूप से टचस्क्रीन devices (जैसे smartphone, tablet) के लिए design किया गया है।</p>
+
+  <h2>Main features of android - एंड्रॉइड के मुख्य फीचर्स:</h2>
+  <p><b>Open-source:</b> इसका सोर्स कोड open-source है, जिसे कोई भी developer कस्टमाइज़ कर सकता है।</p>
+    <p><b>Lightweight and fast -</b> यह कम RAM और CPU वाले डिवाइसेज़ पर भी अच्छे से काम करता है।</p>
+      <p><b>Diverse hardware support -</b> यह कई अलग-अलग हार्डवेयर कॉन्फ़िगरेशन पर चल सकता है।</p>
+        <p><b>Interactive UI -</b> इसका UI आकर्षक और उपयोगकर्ता के अनुकूल (User-Friendly) है।</p>
+  <h2>2. Android application development के लिए आवश्यक tools</h2>
+  <p>अगर आप android application बनाना चाहते हैं, तो आपको निम्नलिखित tools की जरूरत होगी:</p>
+
+  <h3>(a) एंड्रॉइड स्टूडियो (Android Studio)</h3>
+  <p>यह Google द्वारा ऑफ़िशियली सपोर्टेड Integrated Development Environment (IDE) है, जिसमें एप्लिकेशन डेवलपमेंट के लिए सभी ज़रूरी टूल्स उपलब्ध होते हैं।</p>
+
+  <h3>(b) प्रोग्रामिंग लैंग्वेजेज (Programming Languages)</h3>
+  <p><b>Java:</b> पहले android app development के लिए मुख्य भाषा थी।</p>
+  <p><b>Kotlin:</b> अब यह android की ऑफिशियल लैंग्वेज बन चुकी है और अधिक simple और powerful है।</p>
+  <p><b>XML:</b> UI डिज़ाइन के लिए XML का उपयोग किया जाता है।</p>
+  <h3>(c) Android SDK (Software Development Kit)</h3>
+  <p>इसमें वे सभी टूल्स होते हैं जो एंड्रॉइड ऐप डेवलपमेंट के लिए जरूरी होते हैं।</p>
+  <p>इसमें Emulator, Debugger, Libraries, और कई अन्य development tools शामिल होते हैं।</p>
+  <h3>(d) Gradle</h3>
+  <p>यह एक built system है, जो आपके project को manage और compile करने में मदद करता है।
+    <p>यह सभी डिपेंडेंसीज़ (Dependencies) को हैंडल करता है।</p>
+    <h2>3. Architecture of Android application</h2>
+    <p>Android architecture पांच मुख्य layers में विभाजित होता है:</p>
+
+    <p><b>Linux Kernel:</b> यह सबसे निचली परत (Layer) होती है, जो हार्डवेयर और सॉफ्टवेयर के बीच interaction को manage करती है।</p>
+    <p><b>Hardware Abstraction Layer (HAL):</b> यह हार्डवेयर को सॉफ्टवेयर से जोड़ने का काम करता है।</p>
+    <p><b>Android Runtime (ART):</b> यह सभी android application को run करने के लिए जरूरी होता है।</p>
+    <p><b>Application Framework:</b> यह APIs और लाइब्रेरीज़ का सेट होता है, जिसका उपयोग app development में किया जाता है।</p>
+    <p><b>Applications Layer:</b> इसमें वे सभी application आते हैं, जो user interface के रूप में काम करते हैं, जैसे - फ़ोन, मैसेजिंग, ब्राउज़र आदि।</p>
+    <h2>4. Structure of Android application</h2>
+    <p>जब आप कोई एंड्रॉइड एप्लिकेशन बनाते हैं, तो उसका प्रोजेक्ट स्ट्रक्चर कुछ इस प्रकार होता है:</p>
+
+    <p><b>manifests →</b> इसमें AndroidManifest.xml file होती है, जो app की बेसिक जानकारी (Permissions, Activities, Services आदि) को define करती है।</p>
+    <p><b>java →</b> इसमें application का सारा java या kolin code लिखा जाता है।</p>
+    <p><b>res →</b> इसमें XML files (Layouts, Drawables, Colors, Strings आदि) होती हैं।</p>
+    <p><b>Gradle Scripts →</b> यह project को बिल्ड और मैनेज करने के लिए होता है।</p>
+    <h2>5. Main Component of android application</h2>
+    <p>एक android application निम्नलिखित मुख्य components से मिलकर बना होता है:</p>
+
+    <h3>(a) Activity</h3>
+    <p>यह application की UI को manage करता है।</p>
+    <p>हर स्क्रीन एक Activity होती है।</p>
+    <p>मुख्य Activity को MainActivity.java या MainActivity.kt कहा जाता है।</p>
+    <h3>(b) Services</h3>
+    <p>यह background में चलने वाले process होते हैं, जैसे म्यूजिक प्लेयर, डाउनलोडिंग आदि।</p>
+    <p><b>Example:</b> Foreground Service और Background Service</p>
+    <h3>(c) Broadcast Receiver</h3>
+    <p>यह system या अन्य apps द्वारा भेजे गए events को recieve करता है।</p>
+    <p><b>उदाहरण:</b> जब बैटरी लो हो, नेटवर्क कनेक्शन बदले आदि।</p>
+    <h3>(d) Content Provider</h3>
+    <p>यह data sharing के लिए उपयोग किया जाता है।</p>
+    <p>उदाहरण: Contact List, File Storage आदि।</p>
+    <h3>(e) Intents</h3>
+    <p>यह एक app के विभिन्न components के बीच data पास करने के लिए उपयोग किया जाता है।</p>
+  <p>यह दो प्रकार के होते हैं:</p>
+    <p><b>Explicit Intent:</b> एक Activity से दूसरी Activity को खोलने के लिए।</p>
+    <p><b>Implicit Intent:</b> किसी अन्य ऐप के फीचर्स को एक्सेस करने के लिए (जैसे - कैमरा ओपन करना)।</p>
+    <h2>6. Android UI design (User Interface Design)</h2>
+    <p>Android application के UI design के लिए निम्नलिखित concepts का उपयोग किया जाता है:</p>
+
+    <h3>(a) XML Layouts</h3>
+    <p>UI डिज़ाइन के लिए XML files का उपयोग किया जाता है।</p>
+    <p><b>Example:</b></p>
+    <pre>
+    &lt;TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello Android!" /&gt;</pre>
+    <h3>(b) Views और ViewGroups</h3>
+    <p><b>Views:</b> स्क्रीन के एलिमेंट्स (Button, TextView, ImageView आदि)।</p>
+    <p><b>ViewGroups:</b> Views को होल्ड करने वाले कंटेनर (LinearLayout, RelativeLayout, ConstraintLayout आदि)।</p>
+    <h2>7. Android में डेटा स्टोरेज</h2>
+    <p>Android में डेटा को स्टोर करने के लिए कई तरीके उपलब्ध हैं:</p>
+
+    <p><b>Shared Preferences:</b> छोटी मात्रा में डेटा स्टोर करने के लिए।</p>
+    <p><b>SQLite Database:</b> ऑफलाइन डेटा स्टोर करने के लिए।</p>
+    <p><b>Room Database:</b> SQLite का बेहतर वर्ज़न।</p>
+    <p><b>Firebase Database:</b> real-time क्लाउड स्टोरेज के लिए।</p>
+    <p><b>Internal & External Storage:</b> files स्टोर करने के लिए।</p>
+    <h2>8. Android app को डिबग और टेस्ट कैसे करें?</h2>
+    <p><b>Logcat:</b> Error और log मैसेज को चेक करने के लिए।</p>
+    <p><b>Debugging Tools:</b> ब्रेकपॉइंट्स सेट करके कोड को स्टेप बाय स्टेप जांचने के लिए।</p>
+    <p><b>Emulator और Physical Device:</b> app को वर्चुअल और रियल devices पर टेस्ट करने के लिए।</p>     
+    <br><br><br><br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह कंटेंट पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप diploma/polytechnic कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <p style="text-align: center"><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p style="text-align: center"><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br><br>
+      <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section><br><br>
+      <h2>
+          <ul>
+              <li><a href="introduction_to_android.html">Introudction to Android in Hindi</a></li><br>
+              <li><a href="dalvik_virtual_machine.html">Dalvik virtual machine in Hindi</a></li><br>
+              <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+              <li><a href="basic_building_blocks.html">Basic Building blocks in Hindi</a></li><br>
+              <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+              <li><a href="components_for_communication.html">Components for Communication in Hindi</a></li><br>
+              <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
+                  
+          </ul>
+      </h2>
+      <br><br><br><br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+    </script>
+    <footer>
+        <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

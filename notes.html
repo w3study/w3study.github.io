@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introduction to java, Android. Is page par kai notes ke link hai, Jo ki hindi me hai.">
+    <meta name="keywords" content="w2study notes, diploma cs notes in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    <title>Notes in Hindi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: red;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: blue;
+            font-size: 17px;
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://deepanshu8057.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise">Advertise with Us</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br><br>   
+    <br><br>
+  <h2>
+    <ul>
+      <li><a href="introduction_to_android.html">Introudction to Android in hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Virtual Machine in Hindi</a></li><br>
+      <li><a href="introduction_to_java.html">Introduction to Java in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of Android in hindi</a></li><br>
+    </ul>
+  </h2>
+  <br><br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह कंटेंट पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br><br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/161JcQXr77/"><img src="https://i.ibb.co/PsvYBbXh/art-illustration-929495-41.jpg" width=30px" border="0"></a>&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://i.ibb.co/SX1vHFDs/Instagram-new-logo-e1652752802319.jpg" width="30px" border="0"></a>
+    </section>
+    <br><br><br><br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+    </script>
+    <footer>
+        <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

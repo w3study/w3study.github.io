@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं।">
+    <meta name="keywords" content="components for communications in hindi, components for communication in android in hindi, components for communication intents & intent filter in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+     <!-- SEO Code -->
+    <link rel="canonical" href="https://deepanshu8057.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://deepanshu8057.github.io/w2study/"
+}
+</script>
+    
+    <title>Components for Communication - Intents & Intents filters in Hindi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: red;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: blue;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body pre {
+            color: black;
+            background-color: #0ff;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://deepanshu8057.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="notes.html">Notes in Hindi</a></li>
+                <li><a href="advertise">Advertise with Us</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br><br>
+    <h1>Components for communication in android in Hindi</h1>
+    <h2>Android में Communication Components - Intents और Intent Filters</h2>
+    <p>Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं।</p>
+
+    <h2>1. Intent क्या है?</h2>
+    <p>Intent Android का एक मैकेनिज्म है जो अलग-अलग कंपोनेंट्स के बीच डेटा पास करने और एक दूसरे को एक्टिवेट (launch) करने में मदद करता है।</p>
+
+    <h2>Intent के प्रकार</h2>
+<p>Android में दो प्रकार के Intents होते हैं:</p>
+
+    <h3>Implicit Intent (अप्रत्यक्ष इरादा)</h3>
+
+<p>यह तब उपयोग होता है जब हमें यह नहीं पता होता कि कौन सा ऐप या कंपोनेंट कार्य को पूरा करेगा।</p>
+<p>उदाहरण के लिए, अगर हम किसी नंबर पर कॉल करना चाहते हैं, तो हमें यह जानने की जरूरत नहीं कि कौन सा डायलर ऐप यूज होगा।</p>
+    <p><b>उदाहरण:</b></p>
+
+    <pre>
+Intent intent = new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:1234567890"));
+startActivity(intent);</pre>
+        <h3>Explicit Intent </h3>
+
+        <p>जब हमें पहले से ही पता होता है कि हमें किस Activity या Component को लॉन्च करना है, तब हम Explicit Intent का उपयोग करते हैं।</p>
+            <p>उदाहरण के लिए, हम एक Activity से दूसरी Activity को खोलने के लिए इसका उपयोग कर सकते हैं।</p>
+                <p><b>उदाहरण:</b></p>
+
+    <pre>
+Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+startActivity(intent);</pre>
+    <h2>2. Intent Filters क्या हैं?</h2>
+    <p>Intent Filter एक प्रकार का फिल्टर होता है जो यह तय करता है कि कोई विशेष Intent किसी कंपोनेंट (Activity, Service, Broadcast Receiver) द्वारा एक्सेप्ट किया जाएगा या नहीं।</p>
+
+    <h2>Intent Filter के मुख्य भाग:</h2>
+    <p><b>Action:</b> यह वह कार्य को परिभाषित करता है जो Intent करने वाला है (जैसे, android.intent.action.VIEW)।</p>
+    <p><b>Category:</b> यह एक अतिरिक्त फ़िल्टर प्रदान करता है जिससे Intent को और अधिक विशिष्ट बनाया जा सकता है।</p>
+    <p><b>Data:</b> यह दर्शाता है कि कौन सा डेटा टाइप (MIME type, URI) Intent के साथ उपयोग किया जाएगा।</p>
+        <p><b>Example:</b> AndroidManifest.xml में Intent Filter जोड़ना</p>
+
+    <pre>
+&lt;activity android:name=".SecondActivity">
+    &lt;intent-filter>
+        &lt;action android:name="android.intent.action.VIEW" />
+       &lt;category android:name="android.intent.category.DEFAULT" />
+        &lt;data android:mimeType="text/plain" />
+    &lt;/intent-filter>
+&lt;/activity></pre>
+
+  <br><br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह कंटेंट पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br><br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br><br>
+       <h3>
+    <ul>
+      <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></li><br>
+      <li><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+      <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+     
+      <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li>
+    </ul>
+  </h3>
+    <br><br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+    </script>
+    <footer>
+        <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

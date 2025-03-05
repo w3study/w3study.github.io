@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Android ke basic building blocks hindi me. Is page par android ke basic buildingblocks ko define kiya gya hai jinhe bahut his simple language me likha gya hai.">
+    <meta name="keywords" content="basic builing blocks of android in hindi, android ke basic building blocks hindi me, ">
+    <meta name="author" content="deepanshu ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://deepanshu8057.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://deepanshu8057.github.io/w2study/"
+}
+</script>
+    
+    <title>Basic building blocks of android in hindi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: red;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://deepanshu8057.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise">Advertise with Us</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br><br>
+    <h1>Basic Building Blocks of Android in Hindi</h1>    
+    <br><br>
+  <h2>Basic building blocks of android</h2>
+
+<p>Android एक पावरफुल और फ्लेक्सिबल ऑपरेटिंग सिस्टम है जो मोबाइल एप्लिकेशन के लिए design किया गया है। इसमें कई <strong>कोर कंपोनेंट्स</strong> होते हैं जो किसी भी एप्लिकेशन के सही से काम करने में मदद करते हैं। इन्हीं को <strong>एंड्रॉइड के बेसिक बिल्डिंग ब्लॉक्स</strong> कहा जाता है।</p>
+
+<h2>1. एक्टिविटीज़ (Activities)</h2>
+
+<h3>एक्टिविटी क्या होती है?</h3>
+<p>एंड्रॉइड में <strong>Activity</strong> किसी भी एप्लिकेशन की एक स्क्रीन होती है। जब भी यूजर किसी ऐप को खोलता है, तो एक एक्टिविटी स्टार्ट होती है जो <strong>यूजर इंटरफेस (UI)</strong> प्रदान करती है। हर एक्टिविटी अलग-अलग कार्यों को संभालने के लिए बनाई जाती है।</p>
+
+<h3>एक्टिविटी का लाइफसाइकिल</h3>
+<p>एंड्रॉइड की हर एक्टिविटी का एक <strong>लाइफसाइकिल</strong> होता है, जो बताता है कि एक्टिविटी कब शुरू होगी, कब रुकेगी और कब समाप्त होगी।</p>
+<ul>
+    <li><strong>onCreate()</strong> – जब एक्टिविटी बनाई जाती है। इस स्टेज में UI को सेट किया जाता है।</li>
+    <li><strong>onStart()</strong> – जब एक्टिविटी यूजर को दिखाई देती है।</li>
+    <li><strong>onResume()</strong> – जब यूजर इसके साथ इंटरैक्ट करता है।</li>
+    <li><strong>onPause()</strong> – जब कोई दूसरी एक्टिविटी ओपन होती है।</li>
+    <li><strong>onStop()</strong> – जब एक्टिविटी बैकग्राउंड में चली जाती है।</li>
+    <li><strong>onDestroy()</strong> – जब एक्टिविटी बंद हो जाती है और मेमोरी से हटा दी जाती है।</li>
+    <li><strong>onRestart()</strong> – जब पहले से बंद की गई एक्टिविटी फिर से शुरू होती है।</li>
+</ul>
+
+<h2>2. सर्विसेज़ (Services)</h2>
+
+<h3>सर्विस क्या होती है?</h3>
+<p><strong>Service</strong> एक ऐसा कंपोनेंट है जो <strong>बैकग्राउंड में</strong> काम करता है और किसी यूजर इंटरफेस की जरूरत नहीं होती। यह लंबे समय तक चलने वाले कार्यों के लिए उपयोग किया जाता है, जैसे कि म्यूजिक प्लेबैक, डेटा सिंक्रोनाइजेशन, या नेटवर्क ऑपरेशन।</p>
+
+<h2>3. ब्रॉडकास्ट रिसीवर्स (Broadcast Receivers)</h2>
+
+<h3>ब्रॉडकास्ट रिसीवर क्या होता है?</h3>
+<p><strong>Broadcast Receiver</strong> एंड्रॉइड में एक ऐसा कंपोनेंट है जो <strong>सिस्टम या किसी अन्य एप्लिकेशन</strong> से भेजे गए संदेशों (Broadcasts) को सुनता है और उन पर प्रतिक्रिया देता है। जब कोई ऐप या सिस्टम कोई इवेंट ट्रिगर करता है, तो ब्रॉडकास्ट रिसीवर उस इवेंट को पकड़कर उस पर कार्रवाई करता है।</p>
+
+<h2>4. कंटेंट प्रोवाइडर्स (Content Providers)</h2>
+
+<h3>कंटेंट प्रोवाइडर क्या होता है?</h3>
+<p><strong>Content Provider</strong> एक ऐसा कंपोनेंट है जो <strong>डेटा शेयर</strong> करने के लिए उपयोग किया जाता है। यह विभिन्न एप्लिकेशन को डेटा को एक्सेस और मैनेज करने की अनुमति देता है। यह SQLite डेटाबेस, फाइल्स, या वेब से डेटा को एक्सेस कर सकता है और अन्य एप्लिकेशन को एक्सेस करने की अनुमति देता है।</p>
+
+<h3>कंटेंट प्रोवाइडर का उपयोग</h3>
+<ul>
+    <li>एक ऐप से दूसरे ऐप में डेटा साझा करना।</li>
+    <li>SQLite डेटाबेस को मैनेज करना।</li>
+    <li>कॉन्टैक्ट्स, गैलरी, और अन्य डिवाइस डेटा को एक्सेस करना।</li>
+</ul>
+
+<h3>Content Provider के प्रमुख methods</h3>
+<ul>
+    <li><strong>query()</strong> – डेटा को रिट्रीव करने के लिए।</li>
+    <li><strong>insert()</strong> – नया डेटा जोड़ने के लिए।</li>
+    <li><strong>update()</strong> – मौजूदा डेटा को अपडेट करने के लिए।</li>
+    <li><strong>delete()</strong> – डेटा को डिलीट करने के लिए।</li>
+    <li><strong>getType()</strong> – डेटा के प्रकार को जानने के लिए।</li>
+</ul>
+
+<h3>Content Provider का उदाहरण</h3>
+<p>नीचे एक सिंपल कंटेंट प्रोवाइडर का उदाहरण दिया गया है:</p>
+<pre><code>
+    public class MyContentProvider extends ContentProvider {
+    @Override
+    public boolean onCreate() {
+        return true;
+    }
+
+    @Override
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        return null;
+    }
+
+    @Override
+    public String getType(Uri uri) {
+        return null;
+    }
+
+    @Override
+    public Uri insert(Uri uri, ContentValues values) {
+        return null;
+    }
+
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        return 0;
+    }
+
+    @Override
+    public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+        return 0;
+    }
+    }
+</code></pre>
+
+
+  <br><br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह कंटेंट पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br><br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br><br>
+     <h2>
+          <ul>
+              <li><a href="introduction_to_android.html">Introudction to Android in Hindi</a></li><br>
+              <li><a href="dalvik_virtual_machine.html">Dalvik virtual machine in Hindi</a></li><br>
+              <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+              <li><a href="basic_building_blocks.html">Basic Building blocks in Hindi</a></li><br>
+              <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+              <li><a href="components_for_communication.html">Components for Communication in Hindi</a></li><br>
+              <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
+                  
+          </ul>
+      </h2>
+    <br><br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+    </script>
+    <footer>
+        <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
