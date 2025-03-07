@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Setting up development environment android in development of android applications in Hindi">
+    <meta name="keywords" content="setting up development environment android in hindi, setting up android development environment in hindi, development of android applications chapter 2 in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://drs80.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://drs80.github.io/w2study/"
+}
+</script>
+    <title>Setting up development environment android in Hindi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: red;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+  body pre {
+    background-color: #0ff;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+  }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://drs80.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise">Advertise with Us</a></li>
+                <li><a href="notes.html">Notes in Hindi</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br>
+  <!-- Social bar ads code -->
+  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
+  <br>
+  <h1>Setting up development environment android in development of android applications in Hindi</h1>
+  <!-- Native Banner Ads code -->
+  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
+<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
+  <p>Android application development के लिए एक सही development environment setup करना बहुत जरूरी है। इसमें Android Studio, SDKs, Emulator, और अन्य आवश्यक tools को install और configure करना शामिल है। नीचे step-by-step पूरी जानकारी दी गई है:</p>
+  <h2>Android App Development Environment Setup</h2>
+  <h3>1. System Requirements</h3>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p><b>Windows:</b> Win 10/11 (64-bit), 8GB RAM, SSD preferred</p>
+  <p><b>Mac:</b> macOS 10.14+, 8GB RAM</p>
+  <p><b>Linux:</b> 64-bit OS, glibc 2.31+</b>
+  <h3>2. Install Android Studio</h3>
+  <ul>
+  <li><p>Download Android Studio</p></li>
+  <li><p>Install करें और Recommended settings चुनें</p></li>
+  </ul>
+  <h3>3. Configure Android SDK</h3>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <ul>
+    <li><p>File → Settings → Android SDK में जाकर जरूरी SDKs install करें</p></li>
+    <li><p>Windows में Environment Variables सेट करें</p></li>
+  </ul>
+  <h3>4. Setup Emulator (AVD)</h3>
+  <ul>
+    <li><p>Tools → Device Manager → Create Device</p></li>
+    <li><p>कोई डिवाइस सेलेक्ट करें और API download करके run करें</p></li>
+  </ul>
+    <h3>5. Install Java & Gradle</h3>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p>Java और Gradle चेक करें:</p>
+  <pre>
+java -version  
+gradle -v</pre>
+  
+  <h3>6. Create First Android Project</h3>
+  <ul><li><p>New Project → Empty Activity → Next</p></li>
+  <li><p>Language: Java/Kotlin, Minimum SDK: API 21</p></li>
+  <li><p>"Run" बटन दबाकर Emulator/Physical Device पर test करें</p></li></ul>
+  <h3>7. Enable USB Debugging (Physical Device)</h3>
+  <ul><li><p>Settings → About Phone → Build Number (7 बार टैप करें)</p></li>
+    <li><p>Developer Options → USB Debugging ON करें</p></li></ul>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h3>8. Version Control (Git Setup)</h3>
+  <h2>Android Development Environment के Features </h2>
+  <p><b>Android Studio (IDE) –</b> Android के लिए Official और Powerful Development Tool.</p>
+  <p><b>SDK & Build Tools –</b> Android Apps बनाने और Run करने के लिए जरूरी Software Development Kit.</p>
+  <p><b>Virtual Device (Emulator) –</b> App को Test करने के लिए In-Built Android Emulator.</p>
+  <p><b>Java/Kotlin Support –</b> Android Apps बनाने के लिए दो Primary Programming Languages.</p>
+  <p><b>Gradle Build System –</b> Automated Build और Dependency Management के लिए.</p>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p><b>Layout Editor –</b> Drag & Drop UI बनाने के लिए Visual Editor.</p>
+  <p><b>Real-Time Code Analysis –</b> Coding Errors और Optimization के लिए IntelliSense.</p>
+  <p><b>Firebase & Cloud Integration –</b> Authentication, Database और Push Notifications के लिए.</p>
+  <p><b>Debugging & Profiling Tools –</b> Performance Optimization और Bug Fixing के लिए.</p>
+  <p><b>Version Control (Git/GitHub Support) –</b> Code को सुरक्षित और Team में Collaborate करने के लिए.</p>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p>अब आपका Android Development Environment तैयार है!</p> 
+    <h3>
+        <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
+    </h3>
+  <br>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह कंटेंट पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+     <h3>
+    <ul>
+      <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></li><br>
+      <li><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+      <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+      <li><a href="componets_for_communication.html">Components for communication in Android in Hindi</a></li><br>
+      <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li>
+    </ul>
+  </h3>
+    <br>
+  <!-- Banner ads 320 x 50 -->
+  <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+    </script>
+    <footer>
+        <p><small>&copy; 2025 Deepanshu Ranjan. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
