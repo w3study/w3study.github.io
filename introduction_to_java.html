@@ -248,6 +248,43 @@ section {
         .button:hover {
             background: #4a0d8a;
         }
+  /* Footer Ad Styling */
+.footer-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    z-index: 1000;
+}
+
+/* Ad Content */
+.ad-content img {
+    width: 320px;
+    height: 50px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
     </style>
 </head>
 <body>
@@ -267,7 +304,24 @@ section {
             </ul>
         </nav>
     </div>
-       <br><br><br>   
+       <br><br><br>  
+<!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+            <!-- Yahan Google AdSense ka code lagayenge -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+        </div>
+    </div>  <br>
     <!-- Social bar ads code -->
   <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
   <h1> Introduction to java - Java का परिचय</h1><br><br>
@@ -448,6 +502,10 @@ function toggleMenu() {
         hamburger.innerHTML = '&#9776;'; // Three lines icon
     }
 }
+  function closeAd() {
+    document.getElementById("footerAd").style.display = "none";
+}
+
     </script>
     <footer>
         <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
