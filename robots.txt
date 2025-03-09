@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: 
+Allow: 
 User-agent: googlebot-image
 Disallow: 
 User-agent: googlebot-mobile
@@ -7,7 +7,7 @@ Disallow:
 User-agent: Slurp
 Disallow: 
 User-agent: yahoo-mmcrawler
-Disallow: 
+Allow: 
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
