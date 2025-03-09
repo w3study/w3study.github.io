@@ -1,97 +1,233 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Main Pages -->
-    <url>
-        <loc>https://drs80.github.io/w2study/</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/notes.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/android_notes_page.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/introduction_to_java.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/ccc_questions.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/ccc_question_page_1.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/ccc_question_page_2.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-
-    <!-- Android Topics -->
-    <url>
-        <loc>https://drs80.github.io/w2study/introduction_to_android.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/dalvik_virtual_machine.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/apk_file_extension.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/fundamentals_of_android.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/basic_building_blocks.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/ui_components.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/components_for_communication.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/android_api_levels.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-
-    <!-- Less Important Pages -->
-    <url>
-        <loc>https://drs80.github.io/w2study/about.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.40</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/services.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.40</priority>
-    </url>
-    <url>
-        <loc>https://drs80.github.io/w2study/advertise_with_us.html</loc>
-        <lastmod>2025-03-05T16:44:15+00:00</lastmod>
-        <priority>0.40</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://drs80.github.io/w2study/</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/about.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/services.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/advertise_with_us.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/notes.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/android_notes_page.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/introduction_to_java.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ccc_questions.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ccc_question_page_1.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/introduction_to_android.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/dalvik_virtual_machine.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/apk_file_extension.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/fundamentals_of_android.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/basic_building_blocks.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ui_components.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/components_for_communication.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/index.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/apk_file_extension</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/fundamentals_of_android</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/basic_building_blocks</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ui_components</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/components_for_communication</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/android_api_levels</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/setting_up_development_environment_android.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/manifest-xml.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/resources_&_r-java.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/first_sample_application.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/launching_emulator.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/editing_emulator_setting.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/logcat_usage.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/introduction_to_ddms.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/the_mainifest_file_layout_resource.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/running_your_app_on_emulator.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/debugging_the_android_app.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/activities_and_activity_lifecycle.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/permission_system.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/basic_ui_components.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/layouts.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/intents.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/introduction_to_menus_and_types.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/uses_of_shared_preferences.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/android_api_levels.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ccc_question_page_2.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/ccc_question_page_3.html</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/advertise_with_us</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://drs80.github.io/w2study/the_mainifest_file_layout_resource</loc>
+<lastmod>2025-03-09T03:57:10+00:00</lastmod>
+<priority>0.7</priority>
+</url>
 </urlset>
