@@ -1,14 +1,4 @@
 User-agent: *
-Allow: 
-User-agent: googlebot-image
-Disallow: 
-User-agent: googlebot-mobile
-Disallow: 
-User-agent: Slurp
-Disallow: 
-User-agent: yahoo-mmcrawler
-Allow: 
-User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
+Allow: /
+
 Sitemap: https://drs80.github.io/w2study/sitemap.xml
