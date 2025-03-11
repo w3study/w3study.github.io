@@ -273,6 +273,57 @@ if (window.location.hostname.startsWith("www.")) {
         .button:hover {
             background: #4a0d8a;
         }
+	    /* Search Box ko Center me Lane ke liye */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* Page ke center me lane ke liye */
+}
+
+/* Input Box Styling */
+#searchBox {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    text-align: left; /* Text left align rahega */
+}
+
+/* Search Results Container */
+#searchResults {
+    display: none; /* Initially hidden */
+    width: 320px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 200px;
+    overflow-y: auto; /* Scrollbar enable agar zyada results hon */
+}
+
+/* Search Result Items */
+#searchResults div {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    text-align: left; /* Text left side rahega */
+}
+
+#searchResults div:hover {
+    background: #f1f1f1;
+}
+
+/* Last Result ke liye border remove */
+#searchResults div:last-child {
+    border-bottom: none;
+}
+
     </style>
 </head>
 <body>
@@ -295,6 +346,13 @@ if (window.location.hostname.startsWith("www.")) {
        <br><br><br>   
     
     <h2 id="home"></h2>
+<br>
+	<div class="search-container">
+    <input type="text" id="searchBox" placeholder="Search..." oninput="searchPages()" />
+    <div id="searchResults"></div>
+</div>
+
+	<br>
     <div class="img">
     <img src="https://i.ibb.co/21SmJNy5/istockphoto-516137066-612x612.jpg" alt="https://deepanshu8057.github.io/w2study/" width="90%" border="3px"></a>    
 </div>
@@ -350,9 +408,41 @@ function toggleMenu() {
         hamburger.innerHTML = '&#9776;'; // Three lines icon
     }
 }
+	function searchPages() {
+    let query = document.getElementById("searchBox").value.toLowerCase();
+    let results = document.getElementById("searchResults");
+    results.innerHTML = "";
+
+    if (query.length < 2) {
+        results.style.display = "none"; // Hide results if input is empty
+        return;
+    }
+
+    let matchedPages = searchIndex.filter(page =>
+        page.title.toLowerCase().includes(query) ||
+        page.headings.some(h => h.toLowerCase().includes(query)) ||
+        page.keywords.some(k => k.toLowerCase().includes(query))
+    );
+
+    if (matchedPages.length === 0) {
+        results.style.display = "none"; // Hide if no match found
+        return;
+    }
+
+    results.style.display = "block"; // Show results if matches found
+
+    matchedPages.forEach(page => {
+        let resultItem = document.createElement("div");
+        resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+        results.appendChild(resultItem);
+    });
+}
+
     </script>
     <footer>
         <p>&copy; 2025 Deepanshu Ranjan. All rights reserved.</p>
     </footer>
+	<script src="search.js"></script>
+
 </body>
 </html>
