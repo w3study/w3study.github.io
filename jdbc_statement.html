@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JDBC (Java Database Connectivity) एक API (Application Programming Interface) है, जिसका उपयोग Java applications को database से connect">
+    <meta name="keywords" content="jdbc statements preparedstatements, jdbc statement in hindi, prepared statements in hindi, jdbc statements in advanced java in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://drs80.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://drs80.github.io/w2study/"
+}
+</script>
+    <title>JDBC Statement in Hindi, PreparedStatement(Advanced Java)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: black;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: yellow;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 8px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+  body pre {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blue;
+    white-space: pre-wrap;  /* Code ko wrap karne ke liye */
+  word-wrap: break-word;  /* Long words ko break karne ke liye */
+  overflow-x: auto;  /* Agar zaroori ho tabhi horizontal scroll aaye */
+  }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+   /* Footer Ad Styling */
+.footer-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    z-index: 1000;
+}
+
+/* Ad Content */
+.ad-content img {
+    width: 320px;
+    height: 50px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+  .details {
+    background-color: none;
+    color: yellow; 
+    box-radius: 10xp;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid blue;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .details p {
+    color: blue;
+    padding: 8px;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://drs80.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise_with_us.html">Advertise with Us</a></li>
+                <li><a href="notes.html">Notes in Hindi</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br>
+  <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+        </div>
+    </div>  <br>
+  <details class="details">
+    <summary>Topics</summary>
+    <p><a href="#jdbc">JDBC Statement</a></p>
+    <p><a href="#prepared">PreparedStatement</a></p>
+  </details><br><br>
+  <!-- Social bar ads code -->
+  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
+  <h1>JDBC Statement in Hindi, PreparedStatement in Hindi</h1><br>
+  <h2 id="jdbc">JDBC Statement</h2>
+  <!-- Native Banner Ads code -->
+  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
+<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
+  <p>JDBC (Java Database Connectivity) एक API (Application Programming Interface) है, जिसका उपयोग Java applications को database से connect करने और data को manage करने के लिए किया जाता है।</p>
+
+  <p>JDBC API के माध्यम से Java application SQL queries को execute कर सकता है और database से data retrieve या update कर सकता है।</p>
+
+  <p>JDBC में तीन प्रकार के Statements होते हैं:</p>
+
+  <ul><li><b style="color: blue">Statement –</b> Simple SQL queries execute करने के लिए।</li>
+<li><b style="color: blue">PreparedStatement –</b> Precompiled SQL queries के लिए, जिससे performance बेहतर होती है।</b>
+<li><b style="color: blue">CallableStatement –</b> Stored procedures और functions को call करने के लिए।</b></ul>
+    <p>Statement Interface का उपयोग basic SQL queries जैसे SELECT, INSERT, UPDATE, DELETE को execute करने के लिए किया जाता है।</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p>Statement को execute करने के लिए executeQuery(), executeUpdate() और execute() methods का उपयोग किया जाता है।</p>
+
+  <p>Statement को Create करने के लिए Connection object से createStatement() method को call किया जाता है:</p>
+
+  <p style="text-align: right; padding: 0px">java</p><pre>
+Statement stmt = conn.createStatement();</pre>
+  <p>Example (Statement Interface का उपयोग करके SQL Query Execute करना)</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p style="text-align: right; padding: 0px">java</p><pre>
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+while (rs.next()) {
+    System.out.println(rs.getInt("id") + " " + rs.getString("name"));
+}</pre>
+  <p>Statement interface का उपयोग तब किया जाता है जब queries dynamic नहीं होतीं और बार-बार execute नहीं की जातीं।</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p><b>Limitations of Statement Interface:</b></p>
+
+  <ul><li>यह SQL Injection के लिए vulnerable हो सकता है।</li>
+    <li>हर बार new SQL query compile होती है, जिससे performance कम हो जाती है।</li>
+    <li>Dynamic queries के लिए PreparedStatement ज्यादा बेहतर होता है।</li></ul>
+  <p>JDBC के माध्यम से database connection establish करने के लिए JDBC Driver, Connection, Statement, और ResultSet का उपयोग किया जाता है।</p>
+    <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h2 id="prepared">Prepared Statements in Hindi</h2>
+  <p>PreparedStatement एक advanced version है Statement का, जिसे JDBC API में SQL queries को efficiently execute करने के लिए उपयोग किया जाता है।</p>
+
+  <p>यह precompiled SQL queries का उपयोग करता है, जिससे performance बेहतर होती है और हर बार SQL query को compile करने की जरूरत नहीं पड़ती।</p>
+
+  <p>SQL Injection से सुरक्षा प्रदान करता है, क्योंकि यह user input को parameters के रूप में लेता है और dynamically bind करता है।</p>
+
+  <p>PreparedStatement को create करने के लिए prepareStatement() method का उपयोग किया जाता है:</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p style="text-align: right; padding: 0px;">java</p><pre>
+PreparedStatement pstmt = conn.prepareStatement("INSERT INTO students (id, name) VALUES (?, ?)");</pre>
+  <p>Query में ? placeholders का उपयोग किया जाता है, जिन्हें बाद में set किया जाता है।</p>
+
+  <p><b>Example:</b> Data Insert करना using PreparedStatement</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p style="text-align: right; padding: 0px">java</p><pre>
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "password");
+PreparedStatement pstmt = conn.prepareStatement("INSERT INTO students (id, name) VALUES (?, ?)");
+
+pstmt.setInt(1, 101);  // पहला placeholder (id) सेट करना
+pstmt.setString(2, "Rahul");  // दूसरा placeholder (name) सेट करना
+
+int rowsInserted = pstmt.executeUpdate();
+System.out.println(rowsInserted + " record inserted successfully!");</pre>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <p><b>Example:</b> Data Fetch करना using PreparedStatement</p>
+
+  <p style="text-align: right; padding: 0px">java</p><pre>
+PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM students WHERE id = ?");
+pstmt.setInt(1, 101);  // Placeholder को value देना
+
+ResultSet rs = pstmt.executeQuery();
+while (rs.next()) {
+    System.out.println(rs.getInt("id") + " " + rs.getString("name"));
+}</pre>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h3>Advantages of PreparedStatement:</h3>
+
+  <ul><li><b style="color: blue">Faster Execution –</b> SQL query पहले से compile होती है और बार-बार use की जा सकती है।</li>
+  <li><b style="color: blue">Security –</b> SQL Injection attacks से बचाव होता है।</li>
+  <li><b style="color: blue">Readability & Maintainability –</b> Query को dynamic तरीके से manage करना आसान होता है।</li></ul>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h3>Disadvantages:</h3>
+
+<ul><li>यह थोड़ा ज्यादा memory consume कर सकता है, क्योंकि query को cache में store किया जाता है।</li>
+  <li>Simple और rarely used queries के लिए Statement ज्यादा efficient हो सकता है।</li></ul>
+<h3>Use Cases:</h3>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+<ul><li>जब user input dynamically SQL queries में pass करना हो।</li>
+  <li>जब एक ही query multiple times execute करनी हो (Batch Processing)।</li>
+  <li>जब Security और Performance optimize करनी हो।</li></ul>
+  <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br> <h3>
+        <li><a href="advanced_java_notes_link.html">Advanced Java Notes in Hindi</a></li><br>
+        <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
+    </h3>
+  <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह content/post पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+     <h3>
+    <ul>
+      <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></li><br>
+      <li><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+      <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+      <li><a href="componets_for_communication.html">Components for communication in Android in Hindi</a></li><br>
+      <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
+      <li><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></li><br>
+      <li><a href="manifest-xml.html">Manifest.xml in Hindi</a></li><br>
+      <li><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></li><br>
+    </ul>
+  </h3>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+  function closeAd() {
+    document.getElementById("footerAd").style.display = "none";
+}
+    </script>
+    <footer>
+      <p><small>&copy; 2025 Deepanshu Ranjan. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>

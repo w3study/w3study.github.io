@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="
+JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने..">
+    <meta name="keywords" content="jdbc api in hindi, introduction to jdbc api in hindi, what is jdbc api in hindi, jdbc api in advanced java in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://drs80.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://drs80.github.io/w2study/"
+}
+</script>
+    <title>JDBC API in Hindi, JDBC API Components in Hindi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: black;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: yellow;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 7px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+  body pre {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blue;
+    white-space: pre-wrap;  /* Code ko wrap karne ke liye */
+  word-wrap: break-word;  /* Long words ko break karne ke liye */
+  overflow-x: auto;  /* Agar zaroori ho tabhi horizontal scroll aaye */
+  }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+   /* Footer Ad Styling */
+.footer-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    z-index: 1000;
+}
+
+/* Ad Content */
+.ad-content img {
+    width: 320px;
+    height: 50px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+  .details {
+    background-color: none;
+    color: yellow; 
+    box-radius: 10xp;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid blue;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .details p {
+    color: blue;
+    padding: 8px;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://drs80.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise_with_us.html">Advertise with Us</a></li>
+                <li><a href="notes.html">Notes in Hindi</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br>
+  <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+        </div>
+    </div>  <br>
+  <details class="details">
+    <summary>Topics</summary>
+    <p><a href="#api">JDBC API</a></p>
+    <p><a href="#components">JDBC API Components</a></p>
+    <p><a href="#features">Features of JDBC API</a></p>
+  </details><br><br>
+  <!-- Social bar ads code -->
+  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
+  <h1>JDBC API in Hindi, JDBC API Components in Hindi</h1><br>
+  <h2 id="api">JDBC API</h2>
+  <!-- Native Banner Ads code -->
+  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
+<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
+  <ul><p><li>JDBC (Java Database Connectivity) API एक Java API है, जो Java applications को databases के साथ connect, query execute, और data manipulate करने की सुविधा देता है।</li></p>
+  <p><li>यह RDBMS (Relational Database Management Systems) जैसे MySQL, Oracle, PostgreSQL, SQL Server आदि के साथ communication करने के लिए standard interface प्रदान करता है।</li></p>
+  <p><li>JDBC API को Java.sql और javax.sql packages में provide किया गया है।</li></p>
+  <p><li>JDBC API का उपयोग करके Java applications database में data insert, update, delete, और retrieve कर सकते हैं।</li></p>
+    <p><li>JDBC API का उपयोग करने के लिए Java application में database-specific JDBC driver (JAR file) को शामिल करना होता है, जैसे MySQL के लिए mysql-connector-java.jar</li></p>
+    <p><li>JDBC API platform-independent होती है, जिससे Java applications किसी भी database के साथ work कर सकते हैं।</li></p>
+    <p><li>JDBC API prepared statements और callable statements को support करती है, जिससे performance और security improve होती है।</li></p>
+    <p><li>JDBC API batch processing, connection pooling, और transaction management को भी support करता है, जिससे large-scale applications में efficiency बढ़ती है।</li></p>
+    <p><li>JDBC API का उपयोग web applications, desktop applications, और enterprise applications में किया जाता है, जहां database interaction की आवश्यकता होती है।</li></p></ul>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>  
+  <h2 id="components">Components of JDBC API in Hindi</h2>
+  <ol><p><li><b style="color: blue">DriverManager –</b> यह JDBC API का core component है, जो Java application और database के बीच connection establish करने के लिए responsible होता है। यह सही JDBC driver को load और manage करता है।</li></p>
+
+<p><li><b style="color: blue">Connection –</b> यह database से connection establish करने और manage करने के लिए उपयोग किया जाता है। इसके द्वारा database में transactions (commit, rollback) को भी handle किया जा सकता है।</li></p>
+
+<p><li><b style="color: blue">Statement –</b> यह SQL queries को execute करने के लिए उपयोग किया जाता है। JDBC API तीन प्रकार के statements प्रदान करता है:
+<p><b style="color: red">(i) Statement –</b> Simple SQL queries को execute करने के लिए।</p>
+<p><b style="color: red">(ii) PreparedStatement –</b> Precompiled SQL queries को execute करने के लिए, जिससे performance improve होती है।</p>
+<p><b style="color: red">(iii) CallableStatement –</b> Stored procedures को execute करने के लिए।</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+<p><li><b style="color: blue">ResultSet –</b> यह SQL query के execution के बाद आने वाले data को retrieve और navigate करने के लिए उपयोग किया जाता है। यह rows और columns के रूप में database से fetched data को store करता है।</li></p>
+
+<p><li><b style="color: blue">SQLException –</b> यह JDBC operations के दौरान होने वाली errors और exceptions को handle करने के लिए उपयोग किया जाता है।</li></p>
+
+<p><li><b style="color: blue">DataSource –</b> यह Connection pooling और distributed transactions को manage करने के लिए उपयोग किया जाता है, जिससे performance और scalability बेहतर होती है।</li></p>
+
+<p><li><b style="color: blue">RowSet –</b> यह JDBC API में एक advanced feature है, जो ResultSet का एक flexible version प्रदान करता है। यह serializable होता है और disconnected mode में भी data store कर सकता है।</li></p>
+
+<p><li><b style="color: blue">Transaction Management –</b> यह database में commit और rollback operations को manage करने के लिए उपयोग किया जाता है, जिससे data consistency बनी रहती है।</li></p>
+
+<p><li><b style="color: blue">Batch Processing –</b> JDBC API में multiple SQL queries को एक साथ execute करने की सुविधा होती है, जिससे performance improve होती है।</li></p>
+
+<p><li><b style="color: blue">Metadata (DatabaseMetaData & ResultSetMetaData) –</b> यह database और ResultSet से संबंधित जानकारी प्रदान करता है, जैसे table names, column names, data types, और database capabilities.</li></p></ol>
+    <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h2 id="features">Features of JDBC API in Hindi</h2>
+  <ol><p><li><b style="color: blue">Platform Independent –</b> JDBC API Java में लिखी गई है, जिससे यह किसी भी operating system और database पर काम कर सकती है।</li></p>
+
+<p><li><b style="color: blue">Database Independence –</b> JDBC API को इस तरह डिज़ाइन किया गया है कि यह MySQL, Oracle, PostgreSQL, SQL Server जैसे किसी भी RDBMS (Relational Database Management System) के साथ काम कर सके।</li></p>
+
+<p><li><b style="color: blue">Easy Connection Establishment –</b> JDBC API का उपयोग करके Java application से database को आसानी से connect और disconnect किया जा सकता है।</li></p>
+
+<p><li><b style="color: blue">Standard SQL Support –</b> JDBC API SQL (Structured Query Language) को सपोर्ट करता है, जिससे developers आसानी से queries लिख सकते हैं।</li></p>
+
+<p><li><b style="color: blue">Multiple Driver Support –</b> JDBC API Type 1, Type 2, Type 3, और Type 4 JDBC drivers को सपोर्ट करता है, जिससे विभिन्न databases से interaction संभव होता है।</li></p>
+
+<p><li><b style="color: blue">Secure Transactions –</b> JDBC API ACID (Atomicity, Consistency, Isolation, Durability) properties को follow करता है, जिससे database transactions secure और reliable होते हैं।</li></p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+<p><li><b style="color: blue">Connection Pooling –</b> JDBC API connection pooling को सपोर्ट करता है, जिससे performance improve होती है और database connections efficiently manage होते हैं।</li></p>
+
+<p><li><b style="color: blue">Batch Processing –</b> JDBC API एक साथ multiple SQL statements को execute करने के लिए batch processing को सपोर्ट करता है, जिससे execution time कम होता है।</li></p>
+
+<p><li><b style="color: blue">Prepared Statements Support –</b> JDBC API PreparedStatement को सपोर्ट करता है, जिससे SQL queries को optimize किया जाता है और SQL injection जैसी security vulnerabilities को रोका जाता है।</li></p>
+
+<p><li><b style="color: blue">Stored Procedures & Functions Support –</b> JDBC API databases के Stored Procedures और Functions को call करने की सुविधा देता है, जिससे complex database operations को efficiently execute किया जा सकता है।</li></p>
+
+<p><li><b style="color: blue">ResultSet Navigation –</b> JDBC API ResultSet के माध्यम से database से retrieved data को navigate करने की सुविधा देता है, जिससे forward, backward, और random access संभव होता है।</li></p>
+
+<p><li><b style="color: blue">Exception Handling –</b> JDBC API SQLException class के माध्यम से error handling को manage करता है, जिससे database errors को handle करना आसान होता है।</li></p>
+
+<p><li><b style="color: blue">Lightweight & Flexible –</b> JDBC API lightweight होती है और इसे छोटे से बड़े सभी प्रकार के Java applications में integrate किया जा सकता है।</li></p>
+
+<p><li><b style="color: blue">Support for Distributed Computing –</b> JDBC API का उपयोग Enterprise Java Applications और Cloud-Based Applications में किया जा सकता है, जिससे distributed database operations perform किए जा सकते हैं।</li></p></ol>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h3>
+    <li><a href="crud_operation-using_jdbc_api.html">CRUD Operation Using JDBC API</a></li><br>
+    <li><a href="advanced_java_notes_link.html">Advanced Java Notes in Hindi</a></li><br>
+        <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
+    </h3>
+  <br><br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह content/post पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+     <h3>
+    <ul>
+      <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></li><br>
+      <li><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+      <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+      <li><a href="componets_for_communication.html">Components for communication in Android in Hindi</a></li><br>
+      <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
+      <li><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></li><br>
+      <li><a href="manifest-xml.html">Manifest.xml in Hindi</a></li><br>
+      <li><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></li><br>
+    </ul>
+  </h3>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+  function closeAd() {
+    document.getElementById("footerAd").style.display = "none";
+}
+    </script>
+    <footer>
+      <p><small>&copy; 2025 Deepanshu Ranjan. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
