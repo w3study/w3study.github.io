@@ -62,8 +62,9 @@
     body p {
             color: black;
             font-size: 17px;
-            white-space: pre-wrap; /* Automatically wrap content */
-            word-wrap: break-word; /* Break long words if needed */
+             white-space: pre-wrap;  /* Code ko wrap karne ke liye */
+  word-wrap: break-word;  /* Long words ko break karne ke liye */
+  overflow-x: auto;  /* Agar zaroori ho tabhi horizontal scroll aaye */
             margin: auto;
             margin-top: 0px;
             padding: 6px;
@@ -320,6 +321,9 @@
   li {
     margin-right: 10px;
     padding-right: 10px;
+	   white-space: pre-wrap;  /* Code ko wrap karne ke liye */
+  word-wrap: break-word;  /* Long words ko break karne ke liye */
+  overflow-x: auto;  /* Agar zaroori ho tabhi horizontal scroll aaye */-
   }
     </style>
 </head>
