@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Service Android में एक background component होता है, जो बिना UI के long-running operations को execute करने के लिए उपयोग किया जाता है..">
+    <meta name="keywords" content="overview of Services, overview of services in android in hindi, introduction to services in android in hindi, services types implementation and lifecycle in hindi">
+    <meta name="author" content="deepanshu ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://drs80.github.io/w2study/">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "w2study",
+  "url": "https://drs80.github.io/w2study/"
+}
+</script>
+    <title>Overview of Services in Hindi, Types, Lifecycle और Implementing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: black;
+        }
+        body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h1 {
+            color: black;
+            font-size: 25px;
+            margin: auto;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h2 {
+            color: yellow;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: left;
+            padding: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    body p {
+            color: black;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: auto;
+            margin-top: 0px;
+            padding: 4px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+  body pre {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid blue;
+    white-space: pre-wrap;  /* Code ko wrap karne ke liye */
+  word-wrap: break-word;  /* Long words ko break karne ke liye */
+  overflow-x: auto;  /* Agar zaroori ho tabhi horizontal scroll aaye */
+  }
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 25px;
+        }
+    header h3 {
+        color: white;
+        font-size: 15px;
+    }
+
+ /* menu container*/
+          .menu-container {
+            position: relative;
+            width: fix;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+        }
+    
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+    width: fix;
+    justify-content: left;
+    padding: 5px;
+    border: 2px solid #0000ff;
+    border-radius: 0px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background: #4a0d8a;
+        }
+   /* Footer Ad Styling */
+.footer-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    z-index: 1000;
+}
+
+/* Ad Content */
+.ad-content img {
+    width: 320px;
+    height: 50px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+  .details {
+    background-color: none;
+    color: yellow; 
+    box-radius: 10xp;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid blue;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .details p {
+    color: blue;
+    padding: 8px;
+  }
+ body li {
+    padding: 3px;
+    color: black;
+  }
+  .img {
+    display: flex;
+    background-color: none;
+    justify-content: center;
+    align-item: center;
+    height: 45vh;
+    width: 40;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>https://drs80.github.io/w2study/</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="advertise_with_us.html">Advertise with Us</a></li>
+                <li><a href="notes.html">Notes in Hindi</a></li>
+            </ul>
+        </nav>
+    </div>
+       <br><br>
+  <!-- Footer Ad Banner -->
+    <div class="footer-ad" id="footerAd">
+        <button class="close-btn" onclick="closeAd()">✖</button>
+        <div class="ad-content">
+            <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+        </div>
+    </div>  <br>
+  <details class="details">
+    <summary>Topics</summary>
+    <p><a href="#overview">Overview of Services in Hindi</a></p>
+    <p><a href="#types">Types of Services in Hindi</a></p>
+    <p><a href="#imp">Implementing a Service in Hindi</a></p>
+    <p><a href="#life">Service Lifecycle in Hindi</a></p>
+  </details><br><br>
+    <!-- Social bar ads code -->
+  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
+  <h1>Overview of Services in Hindi, Types of Services in Hindi, Implementing a service in Hindi, Service Lifecycle in Hindi</h1>
+  <h2 id="overview">Overview of Services in Hindi</h2>
+  <!-- Native Banner Ads code -->
+  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
+<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
+  <ul><p><li>Service Android में एक background component होता है, जो बिना UI के long-running operations को execute करने के लिए उपयोग किया जाता है।</li></p>
+<p><li>Services का उपयोग music playback, background data sync, location tracking, और network requests जैसे tasks के लिए किया जाता है।</li></p>
+<p><li>यह UI thread (Main Thread) को block किए बिना background में कार्य करता है, जिससे app का performance प्रभावित नहीं होता।</li></p>
+<p><li>Service को startService() method से start किया जाता है और stopService() से बंद किया जाता है।</li></p>
+<p><li>IntentService एक special प्रकार की service होती थी, जो background में tasks को sequentially execute करती थी, लेकिन अब deprecated हो चुकी है।</li></p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+    <p><li>JobIntentService और WorkManager को modern background task scheduling के लिए उपयोग किया जाता है।</li></p>
+<p><li>Services background में चलने के कारण battery consumption और performance optimization के लिए Android ने restrictions implement किए हैं, जैसे Doze Mode और Background Execution Limits।</li></p>
+<p><li>Foreground services को एक notification दिखाना अनिवार्य होता है, ताकि user को इसकी background activity के बारे में पता चल सके।</li></p>
+<p><li>सही तरीके से services implement करने से app का performance बेहतर होता है और user experience smooth बना रहता है।</li></p></ul>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <h2 id="types">Types of Services in Hindi</h2>
+  <p>Android में तीन प्रकार की services होती हैं:</p>  
+  <h3>1. Foreground Service</h3>
+  <ul><li>यह service user को actively दिखती है और एक ongoing notification के साथ चलती रहती है।</li>
+    <li>इसका उपयोग music player, fitness tracking, और location tracking जैसी apps में किया जाता है।</li>
+    <li>इसे startForeground() method से शुरू किया जाता है।</li>
+    <li><b>Example:</b> जब कोई music player चलता है, तो notification bar में controls दिखाई देते हैं।</li></ul>
+  <h3>2. Background Service</h3>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <ul><li>यह बिना किसी direct user interaction के background में चलता है।</li>
+    <li>Android 8.0 (Oreo) से इस पर restrictions लगाई गई हैं, जिससे battery optimization बेहतर हो सके।</li>
+    <li>इसका उपयोग data syncing, auto-backup, और periodic updates के लिए किया जाता है।</li>
+    <li><b>Example:</b> Cloud storage app background में data upload करती है।</li></ul>
+  <h3>3. Bound Service</h3>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <ul><li>यह किसी दूसरे component (जैसे Activity, BroadcastReceiver, या अन्य Services) से bind होकर चलता है।</li>
+    <li>जब तक कोई component इससे connected रहता है, यह service active रहती है।</li>
+    <li>इसे bindService() method से start किया जाता है और onBind() method implement करना जरूरी होता है।</li>
+    <li><b>Example:</b> Messenger apps में जब user call करता है, तो यह bound service का उपयोग करती है।</li></ul>
+  
+    <h2 id="imp">Android में Service Implement करने का तरीका</h2>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+    <h3>1. Simple Background Service Implementation</h3>
+    <p style="text-align: right; padding: 0px">java</p><pre>
+public class MyService extends Service {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.d("MyService", "Service Created");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d("MyService", "Service Started");
+
+        // Background task को एक अलग thread पर चलाएं
+        new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                Log.d("MyService", "Running... " + i);
+                try {
+                    Thread.sleep(1000); // 1 सेकंड की देरी
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            stopSelf(); // Task पूरा होने के बाद service को रोकें
+        }).start();
+
+        return START_STICKY; // Service को restart करने की अनुमति देता है
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null; // Unbound service के लिए null return करें
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("MyService", "Service Destroyed");
+    }
+}</pre>
+      <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+      <h3>2. Service को Manifest में Declare करें</h3>
+      <p style="text-align: right; padding: 0px">xml</p><pre>
+&lt;service android:name=".MyService" /></pre>
+    <h3>3. Service Start और Stop करने का तरीका</h3>
+    <p>Start Service:</p>
+    <p style="text-align: right; padding: 0px">java</p><pre>
+Intent serviceIntent = new Intent(this, MyService.class);
+startService(serviceIntent);</pre>
+      <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+    <p>Stop Service:</p>
+    <p style="text-align: right; padding: 0px">java</p><pre>
+Intent serviceIntent = new Intent(this, MyService.class);
+stopService(serviceIntent);</pre>
+    
+      <h2 id="life">Service Lifecycle in Hindi</h2>      
+      <p><b style="color: blue">onCreate() –</b> जब service पहली बार start होती है, तो यह method call होती है। इसमें initialization process किया जाता है।</p>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+      <p><b style="color: blue">onStartCommand(Intent intent, int flags, int startId) –</b> जब service start होती है, तो यह method call होती है। इसमें background task execute किए जाते हैं। यह method तीन return modes को support करता है:</p>
+
+      <ul><li><b>START_STICKY –</b> यदि service forcefully kill हो जाती है, तो restart हो जाती है।</li>
+        <li><b>START_NOT_STICKY –</b> यदि service kill हो जाती है, तो restart नहीं होगी।</li>
+        <li><b>START_REDELIVER_INTENT –</b> यदि service restart होती है, तो last intent फिर से भेजा जाएगा।</li>
+        <li><b>onBind(Intent intent) –</b> जब कोई component (जैसे activity) bound service से connect होता है, तो यह method call होती है और एक IBinder object return होता है।</li></ul>
+<!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+      <p><b style="color: blue">onUnbind(Intent intent) –</b> जब सभी bound components service से disconnect हो जाते हैं, तो यह method call होती है।</p>
+
+      <p><b style="color: blue">onRebind(Intent intent) –</b> जब कोई पहले से unbind की गई service फिर से bind होती है, तो यह method call होती है।</p>
+
+      <p><b style="color: blue">onDestroy() –</b> जब service stop होती है या system द्वारा destroy की जाती है, तो यह method call होती है और cleanup process किया जाता है।</p>
+
+      <h2>Service Life Cycle Flow:</h2>
+      <ul><li>Start करने के लिए → onCreate() → onStartCommand()</li>
+        <li>Bind करने के लिए → onCreate() → onBind()</li>
+        <li>Unbind होने पर → onUnbind() → onDestroy()</li>
+      <li>Stop होने पर → onDestroy()</li></ul>
+      <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+      <p>सही तरीके से service life cycle manage करने से memory leaks, battery drain और app crashes को रोका जा सकता है।</p>
+      <div class="img">
+      <img src="https://i.ibb.co/prBRbC16/Picsart-25-03-13-11-48-48-714.png" alt="Services Lifecycle in Android"></a>
+      </div>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br> <h3>
+      <li><a href="broadcast_receivers">Broadcast Receivers in Hindi</a></li><br>
+        <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
+    </h3>
+  <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+    <div class="box" id="box">
+      <h2>Request:</h2>
+      <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह content/post पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
+        <p>अगर आप CCC/diploma/polytechnic/MCA/BCA etc कर रहे है तो ये website स्पेशली आपके लिए ही है, जो student हिंदी में पढ़ाई करते है।</p>
+        <h2>Contact Us</h2>
+        <p><b><span style="color: blue">Email: </span></b>deepanshuranjan8057@gmail.com</p>
+        <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
+    </div>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+     
+    <ul>
+      <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
+      <li><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></li><br>
+      <li><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></li><br>
+      <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
+      <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
+      <li><a href="ui_components.html">UI components in Hindi</a></li><br>
+      <li><a href="components_for_communication.html">Components for communication in Android in Hindi</a></li><br>
+      <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
+      <li><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></li><br>
+      <li><a href="manifest-xml.html">Manifest.xml in Hindi</a></li><br>
+      <li><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></li><br>
+    </ul>
+  
+    <br>
+  <!-- Banner ads code 320x50 -->
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+  <br>
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+  function closeAd() {
+    document.getElementById("footerAd").style.display = "none";
+}
+    </script>
+    <footer>
+      <p><small>&copy; 2025 Deepanshu Ranjan. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
