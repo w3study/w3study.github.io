@@ -44,7 +44,7 @@
     
     <meta charset="UTF-8">
     <title>w3study</title>
-<meta name="description" content="w3study: Free Hindi notes, PDFs, and study material for students. Learn Android, Java, Web Development, CCC, and more!" />
+<meta name="description" content="W3Study: Free Hindi notes, PDFs, and study material for students. Learn Android, Java, Web Development, CCC, and more!" />
 <meta name="keywords" content="w3study home page, w3study, w3study.github, w3study entry point" />
 
     <meta name="author" content="Deepanshu Ranjan">
@@ -297,6 +297,40 @@
     color: yellow;
     font-size: 17;
   }
+  #searchBox {
+    display: auto;
+  margin: 10px;
+    padding: 10px;
+    align-item: center;
+    justify-content: center;
+  font-size: 16px;
+}
+
+#searchResults {
+ 
+  color: blue;
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 1px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#searchResults div {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+#searchResults div a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+#searchResults div:hover {
+  background: #e0e0e0;
+}
+
     </style>
 </head>
 <body>
@@ -319,7 +353,12 @@
        <br><br><br>   
     
     <h2 id="home"></h2>
+<input type="text" id="searchBox" placeholder="Search notes..." onkeyup="searchNotes()">
+<div id="searchResults"></div>
 
+<!-- JavaScript File -->
+<script src="search.js"></script>
+  <br><br>
     <div class="img">
     <img src="https://i.ibb.co/21SmJNy5/istockphoto-516137066-612x612.jpg" alt="https://w3study.github.io" width="90%" style="border: 2px solid blue"></a>    
 </div>
@@ -333,8 +372,6 @@
         <br>
        <br>
 <h1 style="color: blue; font-size: 30px; text-align: center;">Notes in Hindi</h1>
-<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="introduction_to_entrepreneurship.html">Introduction to Entrepreneurship in Hindi</a></p><br>
-<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="qualities_and_functions_of_entrepreneurship.html">Qualities and Functions of Entrepreneurship in Hindi</a></p><br>
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="introduction_to_web_applications.html">Introduction to Web Applications</a></p><br>
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="introduction_to_java.html">Introudction to java in Hindi</a></p><br>
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="ccc_questions.html">CCC/Jeecup Entrance Exam Questions in Hindi</a></p><br>
@@ -373,10 +410,51 @@ function toggleMenu() {
         hamburger.innerHTML = '&#9776;'; // Three lines icon
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    let pages = [];
+
+    // Sabhi <a> tags ko scan karna
+    document.querySelectorAll("a").forEach(link => {
+        let url = link.getAttribute("href");
+        let title = link.innerText || url; // Agar title na ho toh URL use karein
+
+        // Sirf internal links ko store karein
+        if (url && !url.startsWith("http")) {
+            pages.push({ title, url });
+        }
+    });
+
+    // Search function
+    window.searchNotes = function () {
+        let query = document.getElementById('searchBox').value.toLowerCase();
+        let resultsDiv = document.getElementById('searchResults');
+        resultsDiv.innerHTML = "";
+
+        if (query === "") return;
+
+        let filteredResults = pages.filter(page =>
+            page.title.toLowerCase().includes(query) ||
+            page.url.toLowerCase().includes(query)
+        );
+
+        if (filteredResults.length === 0) {
+            resultsDiv.innerHTML = "<p>No results found</p>";
+            return;
+        }
+
+        filteredResults.forEach(page => {
+            let resultItem = document.createElement("div");
+            resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+            resultsDiv.appendChild(resultItem);
+        });
+    };
+});
+
     </script>
     <footer>
-        <p>&copy; 2025 w3study.github.io All rights reserved.</p>
+        <p>&copy; 2025 W3Study. All rights reserved.</p>
     </footer>
+	
 
 </body>
 </html>
