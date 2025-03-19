@@ -114,14 +114,14 @@
         }
         header h3 {
            
-            color: white;
+           
           font-size: 30px;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff00ff, #ffcc00, #00ffff, #ff00ff, #ffffff, #ffff00, #80ff80, #ff00ff, #ffcc00);
+    background: linear-gradient(90deg, #ff00ff, #ffcc00, #00ffff, #ff00ff, #333, #ffffff, #ffff00, #80ff80, #ff00ff, #ffcc00, #ddd);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientFlow 10s infinite linear;
+    animation: gradientFlow 25s infinite linear;
 }
 
 @keyframes gradientFlow {
@@ -347,7 +347,6 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="advertise_with_us.html">Advertise with Us</a></li>
                 <li><a href="notes.html">Notes</a></li>
-		<li><a href="all_notes.html">All Notes</a></li>
             </ul>
         </nav>
     </div>
@@ -414,35 +413,31 @@ function toggleMenu() {
 document.addEventListener("DOMContentLoaded", async function () {
     let pages = [];
 
-    // 🔹 Step 1: Sabhi <a> tags ko scan karo (Home Page se)
-    document.querySelectorAll("a").forEach(link => {
-        let url = link.getAttribute("href");
-        let title = link.innerText || url;
-        if (url && !url.startsWith("http")) {
-            pages.push({ title, url });
-        }
-    });
+    // 🔹 Sirf "notes.html" page ko load karo
+    let targetPage = "notes.html"; // Yaha jo page scan karna ho wo add kar sakte ho
 
-    // 🔹 Step 2: Agar "notes.html" ya koi aur index page ho, toh usko bhi scan karo
-    let extraPages = ["all_notes.html"]; // Yaha aur bhi pages add kar sakte ho jo aur links contain karte hain
-    for (let page of extraPages) {
-        await fetch(page)
-            .then(response => response.text())
-            .then(html => {
-                let tempDiv = document.createElement("div");
-                tempDiv.innerHTML = html;
-                tempDiv.querySelectorAll("a").forEach(link => {
+    await fetch(targetPage)
+        .then(response => response.text())
+        .then(html => {
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
+
+            // 🔹 Sirf <body> ke andar ke links ko scan karo
+            let bodyContent = tempDiv.querySelector("body");
+
+            if (bodyContent) {
+                bodyContent.querySelectorAll("a").forEach(link => {
                     let url = link.getAttribute("href");
                     let title = link.innerText || url;
                     if (url && !url.startsWith("http")) {
                         pages.push({ title, url });
                     }
                 });
-            })
-            .catch(error => console.error(`Error loading ${page}:`, error));
-    }
+            }
+        })
+        .catch(error => console.error(`Error loading ${targetPage}:`, error));
 
-    // 🔹 Step 3: Search Function
+    // 🔹 Search Function
     window.searchNotes = function () {
         let query = document.getElementById('searchBox').value.toLowerCase();
         let resultsDiv = document.getElementById('searchResults');
@@ -467,7 +462,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     };
 });
-
     </script>
     <footer>
         <p>&copy; 2025 W3Study. All rights reserved.</p>
