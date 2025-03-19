@@ -410,34 +410,28 @@ function toggleMenu() {
         hamburger.innerHTML = '&#9776;'; // Three lines icon
     }
 }
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", function () {
     let pages = [];
 
-    // 🔹 Sirf "notes.html" page ko load karo
-    let targetPage = "all_notes.html"; // Yaha jo page scan karna ho wo add kar sakte ho
+    // 🔹 Step 1: Hidden iframe Create Karo
+    let iframe = document.createElement("iframe");
+    iframe.style.display = "none"; // Hidden rakho
+    iframe.src = "all_notes.html"; // Notes page ka URL
+    document.body.appendChild(iframe);
 
-    await fetch(targetPage)
-        .then(response => response.text())
-        .then(html => {
-            let tempDiv = document.createElement("div");
-            tempDiv.innerHTML = html;
-
-            // 🔹 Sirf <body> ke andar ke links ko scan karo
-            let bodyContent = tempDiv.querySelector("body");
-
-            if (bodyContent) {
-                bodyContent.querySelectorAll("a").forEach(link => {
-                    let url = link.getAttribute("href");
-                    let title = link.innerText || url;
-                    if (url && !url.startsWith("http")) {
-                        pages.push({ title, url });
-                    }
-                });
+    // 🔹 Step 2: Jab iframe Load Ho Jaye, Toh Uske Links Scan Karo
+    iframe.onload = function () {
+        let links = iframe.contentDocument.querySelectorAll("a");
+        links.forEach(link => {
+            let url = link.getAttribute("href");
+            let title = link.innerText || url;
+            if (url && !url.startsWith("http")) {
+                pages.push({ title, url });
             }
-        })
-        .catch(error => console.error(`Error loading ${targetPage}:`, error));
+        });
+    };
 
-    // 🔹 Search Function
+    // 🔹 Step 3: Search Function
     window.searchNotes = function () {
         let query = document.getElementById('searchBox').value.toLowerCase();
         let resultsDiv = document.getElementById('searchResults');
@@ -462,6 +456,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     };
 });
+
     </script>
     <footer>
         <p>&copy; 2025 W3Study. All rights reserved.</p>
