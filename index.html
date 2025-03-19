@@ -410,26 +410,36 @@ function toggleMenu() {
         hamburger.innerHTML = '&#9776;'; // Three lines icon
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     let pages = [];
 
-    // 🔹 Step 1: Hidden iframe Create Karo
-    let iframe = document.createElement("iframe");
-    iframe.style.display = "none"; // Hidden rakho
-    iframe.src = "all_notes.html"; // Notes page ka URL
-    document.body.appendChild(iframe);
+    // 🔹 Step 1: Sabhi <a> tags ko scan karo (Home Page se)
+    document.querySelectorAll("a").forEach(link => {
+        let url = link.getAttribute("href");
+        let title = link.innerText || url;
+        if (url && !url.startsWith("http")) {
+            pages.push({ title, url });
+        }
+    });
 
-    // 🔹 Step 2: Jab iframe Load Ho Jaye, Toh Uske Links Scan Karo
-    iframe.onload = function () {
-        let links = iframe.contentDocument.querySelectorAll("a");
-        links.forEach(link => {
-            let url = link.getAttribute("href");
-            let title = link.innerText || url;
-            if (url && !url.startsWith("http")) {
-                pages.push({ title, url });
-            }
-        });
-    };
+    // 🔹 Step 2: Agar "notes.html" ya koi aur index page ho, toh usko bhi scan karo
+    let extraPages = ["all_notes.html"]; // Yaha aur bhi pages add kar sakte ho jo aur links contain karte hain
+    for (let page of extraPages) {
+        await fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                let tempDiv = document.createElement("div");
+                tempDiv.innerHTML = html;
+                tempDiv.querySelectorAll("a").forEach(link => {
+                    let url = link.getAttribute("href");
+                    let title = link.innerText || url;
+                    if (url && !url.startsWith("http")) {
+                        pages.push({ title, url });
+                    }
+                });
+            })
+            .catch(error => console.error(`Error loading ${page}:`, error));
+    }
 
     // 🔹 Step 3: Search Function
     window.searchNotes = function () {
