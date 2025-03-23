@@ -35,60 +35,44 @@
 <meta property="og:type" content="website" />
 <meta property="og:updated_time" content="2025-03-16T17:00:00+00:00" />
 <meta http-equiv="last-modified" content="16 Mar 2025 17:00:00 GMT">
-</script>
     <title>Introduction to Servlet in Hindi, Working (Advanced Java)</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: black;
+            background: black;
+            color: white;
         }
         body h1 {
-            color: black;
+            color: white;
             font-size: 25px;
-            margin: auto;
+            margin: 10px;
             padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-    body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+            }
+   
     body h2 {
             color: red;
             font-size: 20px;
             margin-bottom: 0px;
-            margin: left;
             padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+            margin: 10px;  
+    }
     body h3 {
             color: red;
             font-size: 18px;
-            margin: left;
+            margin: 10px;
             padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+            }
     body p {
             color: black;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
-            margin: auto;
+            margin: 10px;
             margin-top: 0px;
             padding: 6px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+            }
   body pre {
     background-color: black;
     color: white;
@@ -107,8 +91,6 @@
         }
 
         header h2 {
-            margin: 0;
-          padding-top: 20px;
             color: yellow;
             font-size: 30px;
         }
@@ -123,7 +105,7 @@
             width: fix;
             color: #000000;
             background-color: #0000ff;
-            padding: 10px 20px;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -140,18 +122,6 @@
             display: flex;
             justify-content: space-around;
         }
-
-        .menu ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu li {
-            margin: 0 15px;
-        }
-
         .menu a {
             text-decoration: none;
             color: white;
@@ -214,7 +184,6 @@
         section p {
             font-size: 1rem;
             color: #000000;
-            line-height: 1.6;
         }
   .about {
             background-color: #ffff;
@@ -235,8 +204,6 @@
         }
    .box {
     background-color: red;
-    width: fix;
-    justify-content: left;
     padding: 5px;
     border: 2px solid #0000ff;
     border-radius: 0px;
@@ -258,15 +225,13 @@
             background: #333;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            width: 100%;
-            bottom: 0;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-        }
+            padding: 10px;
+            margin: 10px auto;
+            
+           }
 
         footer p {
             color: white;
-            margin: 0;
         }
 
         .button {
@@ -325,7 +290,7 @@
   .details {
     background-color: none;
     color: yellow; 
-    box-radius: 10xp;
+    border-radius: 10px;
     box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5);
     border: 2px solid blue;
     margin: 10px;
@@ -334,7 +299,20 @@
   }
   .details p {
     color: blue;
-    padding: 8px;
+    padding: 2px;
+    
+  }
+  .details a {
+    padding: 2px;
+    text-decoration: none;
+  }
+  .details a:hover {
+    background-color: red;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  li {
+    padding: 6px;
   }
     </style>
 </head>
@@ -346,13 +324,13 @@
 <div class="menu-container">
         <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
         <nav id="menu" class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="advertise_with_us.html">Advertise with Us</a></li>
-                <li><a href="notes.html">Notes in Hindi</a></li>
-            </ul>
+            
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="advertise_with_us.html">Advertise with Us</a>
+                <a href="notes.html">Notes in Hindi</a>
+            
         </nav>
     </div>
        <br><br>
@@ -387,11 +365,11 @@
   <!-- Native Banner Ads code -->
   <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
 <div id="container-dc9dfe240e118cb55706785c2817f852"></div>
-  <ul><p><li>Servlet एक server-side Java program होता है, जो web applications में client request को process करता है और response generate करता है।</li></p>
-<p><li>यह Java EE (Jakarta EE) का एक हिस्सा है और इसे dynamic web applications बनाने के लिए उपयोग किया जाता है।</li></p>
-<p><li>Servlet को HTTP request-response model पर काम करने के लिए design किया गया है और यह Web Server पर run करता है।</li></p>
-<p><li>यह HTML, XML, JSON जैसे formats में response भेज सकता है और databases से data fetch करने की क्षमता रखता है।</li></p>
-<p><li>Servlet को traditional CGI (Common Gateway Interface) की तुलना में अधिक efficient और scalable माना जाता है क्योंकि यह multithreading को support करता है।</li></p>
+  <ul><li>Servlet एक server-side Java program होता है, जो web applications में client request को process करता है और response generate करता है।</li>
+<li>यह Java EE (Jakarta EE) का एक हिस्सा है और इसे dynamic web applications बनाने के लिए उपयोग किया जाता है।</li>
+<li>Servlet को HTTP request-response model पर काम करने के लिए design किया गया है और यह Web Server पर run करता है।</li>
+<li>यह HTML, XML, JSON जैसे formats में response भेज सकता है और databases से data fetch करने की क्षमता रखता है।</li>
+<li>Servlet को traditional CGI (Common Gateway Interface) की तुलना में अधिक efficient और scalable माना जाता है क्योंकि यह multithreading को support करता है।</li>
 <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -403,11 +381,11 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p><li>Servlet API के दो मुख्य interface होते हैं: Servlet Interface और GenericServlet, और सबसे अधिक उपयोग होने वाला class HttpServlet होता है।</li></p>
-<p><li>Servlet का lifecycle तीन मुख्य चरणों में divided होता है: Initialization (init method), Service (service method), और Destruction (destroy method)।</li></p>
-<p><li>Servlet container, जैसे कि Apache Tomcat, JBoss, और GlassFish, Servlet को manage और execute करते हैं।</li></p>
-<p><li>यह Session Management techniques जैसे Cookies, HttpSession, URL Rewriting को support करता है, जिससे user data को maintain किया जा सकता है।</li></p>
-<p><li>Servlet का उपयोग MVC (Model-View-Controller) architecture में किया जाता है, जहां यह controller के रूप में act करता है और user requests को process करता है।</li></p></ul>
+<li>Servlet API के दो मुख्य interface होते हैं: Servlet Interface और GenericServlet, और सबसे अधिक उपयोग होने वाला class HttpServlet होता है।</li>
+<li>Servlet का lifecycle तीन मुख्य चरणों में divided होता है: Initialization (init method), Service (service method), और Destruction (destroy method)।</li>
+<li>Servlet container, जैसे कि Apache Tomcat, JBoss, और GlassFish, Servlet को manage और execute करते हैं।</li>
+<li>यह Session Management techniques जैसे Cookies, HttpSession, URL Rewriting को support करता है, जिससे user data को maintain किया जा सकता है।</li>
+<li>Servlet का उपयोग MVC (Model-View-Controller) architecture में किया जाता है, जहां यह controller के रूप में act करता है और user requests को process करता है।</li></ul>
     <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -420,15 +398,15 @@
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <h2 id="working">Working of Servlet in Hindi</h2>
-  <ol><p><li><b style="color: blue">Client Request –</b> जब कोई user web browser में URL enter करता है या किसी web application पर request भेजता है, तो यह request web server तक पहुँचती है।</li></p>
+  <ol><li><b style="color: blue">Client Request –</b> जब कोई user web browser में URL enter करता है या किसी web application पर request भेजता है, तो यह request web server तक पहुँचती है।</li>
 
-<p><li><b style="color: blue">Web Server Processing –</b> Web server (जैसे Apache Tomcat, GlassFish) इस request को receive करता है और यह चेक करता है कि requested resource (Servlet) available है या नहीं।</li></p>
+<li><b style="color: blue">Web Server Processing –</b> Web server (जैसे Apache Tomcat, GlassFish) इस request को receive करता है और यह चेक करता है कि requested resource (Servlet) available है या नहीं।</li>
 
-<p><li><b style="color: blue">Servlet Container Execution –</b> Web server request को Servlet Container को भेजता है, जो Servlet को manage और execute करता है। Servlet Container निम्न कार्य करता है:</li></p>
+<li><b style="color: blue">Servlet Container Execution –</b> Web server request को Servlet Container को भेजता है, जो Servlet को manage और execute करता है। Servlet Container निम्न कार्य करता है:</li>
 
-    <ul><li><p>यदि Servlet पहली बार call हो रहा है, तो उसका object create किया जाता है।</p></li>
-    <li><p>Servlet का init() method call किया जाता है (सिर्फ पहली बार execution पर)।</p></li>
-    <li><p>Request को handle करने के लिए service() method call किया जाता है।</p></li></ul>
+    <ul><li>यदि Servlet पहली बार call हो रहा है, तो उसका object create किया जाता है।</li>
+    <li>Servlet का init() method call किया जाता है (सिर्फ पहली बार execution पर)।</li>
+    <li>Request को handle करने के लिए service() method call किया जाता है।</li></ul>
 <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -440,11 +418,11 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p><li><b style="color: blue">Processing Request –</b> Servlet client द्वारा भेजे गए data (GET या POST request) को process करता है, database से data fetch करता है या कोई अन्य logic apply करता है।</li></p>
-<p><li><b style="color: blue">Generating Response –</b> Servlet response generate करता है, जो HTML, JSON, XML, या कोई अन्य format में हो सकता है।</li></p>
-<p><li><b style="color: blue">Response भेजना –</b> Servlet generated response को web server को return करता है।</li></p>
-<p><li><b style="color: blue">Client Display –</b> Web server response को client के browser पर भेज देता है, जहां user को final output दिखाई देता है।</li></p>
-<p><li><b style="color: blue">Servlet Destroy (Optional) –</b> जब Servlet को अब ज़रूरत नहीं होती, तो Container उसका object destroy कर देता है और destroy() method call करता है।</li></p></ol>
+    <li><b style="color: blue">Processing Request –</b> Servlet client द्वारा भेजे गए data (GET या POST request) को process करता है, database से data fetch करता है या कोई अन्य logic apply करता है।</li>
+<li><b style="color: blue">Generating Response –</b> Servlet response generate करता है, जो HTML, JSON, XML, या कोई अन्य format में हो सकता है।</li>
+<li><b style="color: blue">Response भेजना –</b> Servlet generated response को web server को return करता है।</li>
+<li><b style="color: blue">Client Display –</b> Web server response को client के browser पर भेज देता है, जहां user को final output दिखाई देता है।</li>
+<li><b style="color: blue">Servlet Destroy (Optional) –</b> जब Servlet को अब ज़रूरत नहीं होती, तो Container उसका object destroy कर देता है और destroy() method call करता है।</li></ol>
    <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -457,11 +435,11 @@
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <h2 id="ad">Advantages of Servlet in Hindi</h2>
-  <ol><li><p><b style="color: blue">Better Performance –</b> Servlet, CGI (Common Gateway Interface) की तुलना में बेहतर प्रदर्शन करता है क्योंकि यह multithreading को support करता है और हर request के लिए नया process बनाने के बजाय एक ही thread में request को handle करता है।</p></li>
-<li><p><b style="color: blue">Platform Independent –</b> Servlet Java-based होता है, इसलिए यह किसी भी operating system और web server पर run कर सकता है जिसमें JVM (Java Virtual Machine) हो।</p></li>
-<li><p><b style="color: blue">Robust and Secure –</b> Java के exception handling और security features के कारण Servlet अधिक सुरक्षित और मजबूत होता है। इसमें authentication, authorization, और encryption जैसी सुविधाएं होती हैं।</p></li>
-<li><p><b style="color: blue">Scalability –</b> Servlet आसानी से high-traffic web applications को handle कर सकता है क्योंकि यह lightweight और efficient है।</p></li>
-<li><p><b style="color: blue">Persistence –</b> Servlet को database, files, या external APIs से connect किया जा सकता है, जिससे dynamic content generate किया जा सकता है।</p></li>
+  <ol><li><b style="color: blue">Better Performance –</b> Servlet, CGI (Common Gateway Interface) की तुलना में बेहतर प्रदर्शन करता है क्योंकि यह multithreading को support करता है और हर request के लिए नया process बनाने के बजाय एक ही thread में request को handle करता है।</li>
+<li><b style="color: blue">Platform Independent –</b> Servlet Java-based होता है, इसलिए यह किसी भी operating system और web server पर run कर सकता है जिसमें JVM (Java Virtual Machine) हो।</li>
+<li><b style="color: blue">Robust and Secure –</b> Java के exception handling और security features के कारण Servlet अधिक सुरक्षित और मजबूत होता है। इसमें authentication, authorization, और encryption जैसी सुविधाएं होती हैं।</li>
+<li><b style="color: blue">Scalability –</b> Servlet आसानी से high-traffic web applications को handle कर सकता है क्योंकि यह lightweight और efficient है।</li>
+<li><b style="color: blue">Persistence –</b> Servlet को database, files, या external APIs से connect किया जा सकता है, जिससे dynamic content generate किया जा सकता है।</li>
 <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -473,11 +451,11 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <li><p><b style="color: blue">Session Management –</b> Servlet, user session को maintain करने के लिए Cookies, HttpSession, और URL Rewriting जैसी techniques को support करता है।</p></li>
-<li><p><b style="color: blue">Reusability –</b> एक बार Servlet को develop करने के बाद इसे multiple applications में reuse किया जा सकता है, जिससे development का समय और प्रयास बचता है।</p></li>
-<li><p><b style="color: blue">Integration with Java Technologies –</b> Servlet को आसानी से JSP, JDBC, Hibernate, Spring, और RESTful Web Services जैसी Java-based technologies के साथ integrate किया जा सकता है।</p></li>
-<li><p><b style="color: blue">Easy Maintenance –</b> Servlet-based applications को manage और maintain करना आसान होता है क्योंकि code modular और well-structured होता है।</p></li>
-<li><p><b style="color: blue">Support for MVC Architecture –</b> Servlet, MVC (Model-View-Controller) design pattern को support करता है, जिससे web applications को logically organize करना आसान होता है।</p></li></ol>
+    <li><b style="color: blue">Session Management –</b> Servlet, user session को maintain करने के लिए Cookies, HttpSession, और URL Rewriting जैसी techniques को support करता है।</li>
+<li><b style="color: blue">Reusability –</b> एक बार Servlet को develop करने के बाद इसे multiple applications में reuse किया जा सकता है, जिससे development का समय और प्रयास बचता है।</li>
+<li><b style="color: blue">Integration with Java Technologies –</b> Servlet को आसानी से JSP, JDBC, Hibernate, Spring, और RESTful Web Services जैसी Java-based technologies के साथ integrate किया जा सकता है।</li>
+<li><b style="color: blue">Easy Maintenance –</b> Servlet-based applications को manage और maintain करना आसान होता है क्योंकि code modular और well-structured होता है।</li>
+<li><b style="color: blue">Support for MVC Architecture –</b> Servlet, MVC (Model-View-Controller) design pattern को support करता है, जिससे web applications को logically organize करना आसान होता है।</li></ol>
   <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -490,11 +468,11 @@
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <h2 id="dis">Disadvantages of Servlet in Hindi</h2>
-  <ol><li><p><b style="color: blue">Complexity –</b> Servlet को manage करना और maintain करना थोड़ा मुश्किल होता है, खासकर जब application बड़ी होती है।</p></li>
-<li><p><b style="color: blue">Boilerplate Code –</b> Servlet में बहुत ज्यादा boilerplate code लिखना पड़ता है, जिससे development slow हो सकता है।</p></li>
-<li><p><b style="color: blue">Difficult to Manage UI –</b> HTML और Java code को mix करके dynamic pages बनाना मुश्किल होता है, इसलिए JSP या frameworks जैसे Spring MVC को prefer किया जाता है।</p></li>
-<li><p><b style="color: blue">No Built-in Template Support –</b> Servlet में कोई template engine नहीं होता, जिससे dynamic content generation मुश्किल हो जाता है।</p></li>
-<li><p><b style="color: blue">Session Management Complexity –</b> Cookies, URL rewriting, और HttpSession को manage करना manually करना पड़ता है, जिससे development और debugging मुश्किल होती है।</p></li>
+  <ol><li><b style="color: blue">Complexity –</b> Servlet को manage करना और maintain करना थोड़ा मुश्किल होता है, खासकर जब application बड़ी होती है।</li>
+<li><b style="color: blue">Boilerplate Code –</b> Servlet में बहुत ज्यादा boilerplate code लिखना पड़ता है, जिससे development slow हो सकता है।</li>
+<li><b style="color: blue">Difficult to Manage UI –</b> HTML और Java code को mix करके dynamic pages बनाना मुश्किल होता है, इसलिए JSP या frameworks जैसे Spring MVC को prefer किया जाता है।</li>
+<li><b style="color: blue">No Built-in Template Support –</b> Servlet में कोई template engine नहीं होता, जिससे dynamic content generation मुश्किल हो जाता है।</li>
+<li><b style="color: blue">Session Management Complexity –</b> Cookies, URL rewriting, और HttpSession को manage करना manually करना पड़ता है, जिससे development और debugging मुश्किल होती है।</li>
 <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
 	atOptions = {
@@ -506,11 +484,11 @@
 	};
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <li><p><b style="color: blue">Less Productive Compared to Frameworks –</b> Servlet को सीधे use करने की बजाय Spring, Struts, Hibernate जैसे frameworks का उपयोग करना ज्यादा आसान और efficient होता है।</p></li>
-<li><p><b style="color: blue">Thread Management Issues –</b> Servlet container एक ही instance के multiple threads handle करता है, जिससे concurrency issues आ सकते हैं।</p></li>
-<li><p><b style="color: blue">Difficult to Scale –</b> बड़े applications के लिए Servlets को manage करना और maintain करना कठिन हो जाता है, जबकि frameworks scalability को आसान बनाते हैं।</p></li>
-<li><p><b style="color: blue">Not Suitable for RESTful APIs –</b> RESTful services के लिए Servlet उतना efficient नहीं है, इसलिए Spring Boot, Jersey जैसे frameworks ज्यादा use किए जाते हैं।</p></li>
-<li><p><b style="color: blue">Manual Dependency Management –</b> Servlet में dependency injection की सुविधा नहीं होती, जबकि Spring जैसे frameworks यह feature provide करते हैं।</p></li></ol>
+    <li><b style="color: blue">Less Productive Compared to Frameworks –</b> Servlet को सीधे use करने की बजाय Spring, Struts, Hibernate जैसे frameworks का उपयोग करना ज्यादा आसान और efficient होता है।</li>
+<li><b style="color: blue">Thread Management Issues –</b> Servlet container एक ही instance के multiple threads handle करता है, जिससे concurrency issues आ सकते हैं।</li>
+<li><b style="color: blue">Difficult to Scale –</b> बड़े applications के लिए Servlets को manage करना और maintain करना कठिन हो जाता है, जबकि frameworks scalability को आसान बनाते हैं।</li>
+<li><b style="color: blue">Not Suitable for RESTful APIs –</b> RESTful services के लिए Servlet उतना efficient नहीं है, इसलिए Spring Boot, Jersey जैसे frameworks ज्यादा use किए जाते हैं।</li>
+<li><b style="color: blue">Manual Dependency Management –</b> Servlet में dependency injection की सुविधा नहीं होती, जबकि Spring जैसे frameworks यह feature provide करते हैं।</li></ol>
   
 <!-- Banner ads code 320x50 -->
             <script type="text/javascript">
