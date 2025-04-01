@@ -296,7 +296,7 @@
 }
 
 #searchResults div:hover {
-  background: orange;
+  background: pink;
 }
 
     </style>
@@ -352,6 +352,13 @@
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="basic_building_blocks.html">Basic Building blocks of Android in Hindi</a></p><br>
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="ui_components.html">UI Components in Hindi</a></p><br>
 <p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="components_for_communication.html">Components for Communication in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="uses_of_shared_preferences.html">Uses of Shared Preferences in Android in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="introduction_to_menus_and_types.html">Introduction to Menus and Types in Android in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="adptors_and_view_holder.html">Adaptors and View Holder in android in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="schemes_of_assistance.html">Schemes of Assistance in IMED in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="entrepreneurship_support_organizations.html">Entrepreneurship Support Organizations in IMED in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="web_server.html">Introduction to Web server in Hindi</a></p><br>
+<p style="text-align: center; border: 2px solid blue; background-color: yellow;" ><a href="introduction_to_tomcat_web_server.html">Introduction to Tomcat Web server in Hindi</a></p><br>
 <br><br><br>
 <div class="box" style="padding: 10px; margin: 10px;">
 <h2>Contact Us</h2>
@@ -382,13 +389,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     let pages = [];
 
     // 🔹 Step 1: Sabhi <a> tags ko scan karo (Home Page se)
-    document.querySelectorAll("a").forEach(link => {
-        let url = link.getAttribute("href");
-        let title = link.innerText || url;
-        if (url && !url.startsWith("http")) {
-            pages.push({ title, url });
-        }
-    });
+    //document.querySelectorAll("a").forEach(link => {
+      //  let url = link.getAttribute("href");
+        //let title = link.innerText || url;
+        //if (url && !url.startsWith("http")) {
+          //  pages.push({ title, url });
+       // }
+   // });
 
     // 🔹 Step 2: Agar "notes.html" ya koi aur index page ho, toh usko bhi scan karo
     let extraPages = ["all_notes.html"]; // Yaha aur bhi pages add kar sakte ho jo aur links contain karte hain
@@ -439,7 +446,5 @@ document.addEventListener("DOMContentLoaded", async function () {
     <footer>
         <p><small>&copy; 2025 w3study. All rights reserved.</small></p>
     </footer>
-	
-
 </body>
 </html>
