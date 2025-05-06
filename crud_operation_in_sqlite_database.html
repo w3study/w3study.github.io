@@ -44,19 +44,12 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: black;
+            background: black;
+            color: white;
         }
-        body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+        
     body h1 {
-            color: black;
+            color: white;
             font-size: 25px;
             margin: auto;
             padding: 10px;
@@ -81,7 +74,7 @@
             margin-right: 10px;
         }
     body p {
-            color: black;
+            color: white;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
@@ -92,7 +85,7 @@
             margin-right: 10px;
         }
   body pre {
-    background-color: black;
+    background-color: #333;
     color: white;
     margin: 10px;
     padding: 10px;
@@ -271,59 +264,6 @@
             margin: 0;
         }
 
-        .button {
-            background: #6a11cb;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        .button:hover {
-            background: #4a0d8a;
-        }
-   /* Footer Ad Styling */
-.footer-ad {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    z-index: 1000;
-}
-
-/* Ad Content */
-.ad-content img {
-    width: 320px;
-    height: 50px;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    background: none;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    text-align: center;
-    line-height: 20px;
-}
   .details {
     background-color: none;
     color: yellow; 
@@ -358,23 +298,7 @@
         </nav>
     </div>
        <br><br>
-  <!-- Footer Ad Banner -->
-    <div class="footer-ad" id="footerAd">
-        <button class="close-btn" onclick="closeAd()">✖</button>
-        <div class="ad-content">
-            <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-        </div>
-    </div>  <br>
+ 
   <details class="details">
     <summary>Topics</summary>
     <p><a href="#crud">CRUD Operation in SQLite Database in Hindi</a></p>
@@ -383,13 +307,8 @@
     <p><a href="#up">Update Operation</a></p>
     <p><a href="#del">Delete Operation</a></p>
   </details><br><br>
-    <!-- Social bar ads code -->
-  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
-  <h1>CRUD Operation in SQLite Database in Hindi (Android)</h1><br>
+   <h1>CRUD Operation in SQLite Database in Hindi (Android)</h1><br>
   <h2 id="crud">CRUD Operations in SQLite Database</h2>
-<!-- Native Banner Ads code -->
-  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
-<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
 <p>CRUD का मतलब Create, Read, Update, और Delete होता है, जो किसी database में data manage करने के लिए सबसे जरूरी operations हैं। Android में SQLiteOpenHelper class की मदद से CRUD operations को implement किया जाता है।</p>
 
   <h2 id="create">1. Create (Insert Data)</h2>
@@ -404,17 +323,6 @@ public void insertData(String name, int age) {
     db.insert("students", null, values);
     db.close();
 }</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <h2 id="read">2. Read (Fetch Data)</h2>
   <p>Database से data retrieve करने के लिए query() या rawQuery() का उपयोग किया जाता है।</p>
 
@@ -423,18 +331,7 @@ public Cursor getAllData() {
     SQLiteDatabase db = this.getReadableDatabase();
     return db.rawQuery("SELECT * FROM students", null);
 }</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <h2 id="up">3. Update (Modify Data)</h2>
+ <h2 id="up">3. Update (Modify Data)</h2>
   <p>Existing record को update करने के लिए update() method का उपयोग किया जाता है।</p>
 
   <p style="text-align: right; padding: 0px;">java</p><pre>
@@ -446,18 +343,7 @@ public void updateData(int id, String newName, int newAge) {
     db.update("students", values, "id=?", new String[]{String.valueOf(id)});
     db.close();
 }</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <h2 id="del">4. Delete (Remove Data)</h2>
+   <h2 id="del">4. Delete (Remove Data)</h2>
   <p>किसी record को delete करने के लिए delete() method का उपयोग किया जाता है।</p>
 
   <p style="text-align: right; padding: 0px;"java</p><pre>
@@ -467,31 +353,8 @@ public void deleteData(int id) {
     db.close();
 }</pre>
   <br>
-  <p style="background-color: yellow; text-align: center; border: 2px solid blue"> <a href="basic_of_content_provider">Basic of Content Provider in Hindi</a></p><br>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></p>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br><br>
+   <br><br>
     <div class="box" id="box">
       <h2>Request:</h2>
       <p>हैलो दोस्तों! उम्मीद करता हूं आपको हमारा यह content/post पसंद आया होगा। अगर आपको हमारा ये content/post पसंद आई हो तो अपने दोस्तों के पास भी share करे। और अगर आपको कोई problem या कोई specific content हिन्दी में चाहिए है तो आप हमें नीचे दिए गए Email या whatsapp number के जरिए बता सकते है।</p>
@@ -501,169 +364,26 @@ public void deleteData(int id) {
         <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
     </div>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+    <br>
   <section class="about" id="about">
         <h2>Follow Us</h2>
         <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
     </section>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+   <br>
       <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="introduction_to_android.html">Introduction to Android in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="apk_file_extension.html">apk file extension in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+     <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></p><br>
+     <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></p><br>
+     <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></p><br>
+       <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="apk_file_extension.html">apk file extension in Hindi</a></p><br>
       <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="ui_components.html">UI components in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="components_for_communication.html">Components for communication in Android in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="android_api_levels.html">Android API Levels in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
+    <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="components_for_communication.html">Components for communication in Android in Hindi</a></p><br>
+       <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="android_api_levels.html">Android API Levels in Hindi</a></p><br>
       <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="manifest-xml.html">Manifest.xml in Hindi</a></p><br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></p><br>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br><br>
+   <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="manifest-xml.html">Manifest.xml in Hindi</a></p><br>
+   <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></p><br>
+   <br><br>
 <script>
 function toggleMenu() {
     const menu = document.getElementById('menu');
