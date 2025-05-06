@@ -44,27 +44,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 15%, #fad0c4 100%);
-            color: black;
+            background: black;
+            color: white;
         }
         body h1 {
-            color: black;
+            color: white;
             font-size: 25px;
             margin: auto;
             padding: 10px;
             margin-left: 10px;
             margin-right: 10px;
         }
-    body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-            padding-bottom: -10px;
-            margin-bottom: -10px;
-        }
+    
     body h2 {
             color: yellow;
             font-size: 20px;
@@ -87,7 +78,7 @@
             margin-bottom: 0px;
         }
     body p {
-            color: black;
+            color: white;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
@@ -98,7 +89,7 @@
             margin-right: 10px;
         }
   body pre {
-    background-color: black;
+    background-color: #333;
     color: white;
     margin: 10px;
     padding: 10px;
@@ -291,43 +282,8 @@
         .button:hover {
             background: #4a0d8a;
         }
-   /* Footer Ad Styling */
-.footer-ad {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    z-index: 1000;
-}
+  
 
-/* Ad Content */
-.ad-content img {
-    width: 320px;
-    height: 50px;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    background: none;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    text-align: center;
-    line-height: 20px;
-}
     </style>
 </head>
 <body>
@@ -348,30 +304,9 @@
         </nav>
     </div>
        <br><br>
-  <!-- Footer Ad Banner -->
-    <div class="footer-ad" id="footerAd">
-        <button class="close-btn" onclick="closeAd()">✖</button>
-        <div class="ad-content">
-            <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-        </div>
-    </div>  <br>
-<!-- Social bar ads code -->
-  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>  <br>
+ 
   <h1>Android UI Components in Hindi</h1>
   <p>Android में UI (User Interface) Components का उपयोग Screen पर Elements (जैसे Button, TextView, ImageView, EditText आदि) को दिखाने और User Interaction को Handle करने के लिए किया जाता है।</p>
-<!-- Native Banner Ads code -->
-  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
-<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
   <ul><li>UI Components को XML में Declare किया जाता है और Java/Kotlin Code के जरिए Control किया जाता है।</li>
     <li>इन Components का उपयोग करके अच्छे और Interactive Android Apps बनाए जा सकते हैं।</li></ul>
 
@@ -381,17 +316,6 @@
     <li>यह Labels, Headings, Messages, या Instructions को दिखाने के लिए सबसे ज़्यादा Use होता है।</li>
     <li>TextView को XML में Declare किया जाता है और Java/Kotlin Code से Modify किया जा सकता है।</li>
     <li>यह Android के android.widget.TextView Class से आता है।</li></ul>
-<!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <p><b>Example (TextView in XML)</b></p><pre>
 &lt;TextView
     android:id="@+id/textView"
@@ -403,17 +327,6 @@
   <p><b>Example (Java Code में Text Set करना)</b></p><pre>
 TextView textView = findViewById(R.id.textView);
 textView.setText("Welcome to Android!");</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <h2>2. Button (buttom पर click करने के लिए)</h2>
     <p>Button Android का एक सबसे Common UI Component है, जिसका उपयोग User से Interaction के लिए किया जाता है। जब User किसी Button को Tap या Click करता है, तो एक Action Trigger होता है, जैसे:</p>
     <ul><li>नई Activity Open करना</li>
@@ -421,18 +334,7 @@ textView.setText("Welcome to Android!");</pre>
       <li>Data Submit करना (Form Submission)</li>
       <li>Image या Text Change करना</li></ul>
     <p>Android में Button को XML (UI Design) और Java/Kotlin (Event Handling) में Define किया जाता है।</p>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Example (Button in XML)</b></p><pre>
+   <p><b>Example (Button in XML)</b></p><pre>
 &lt;Button
     android:id="@+id/button"
     android:layout_width="wrap_content"
@@ -443,18 +345,7 @@ Button button = findViewById(R.id.button);
 button.setOnClickListener(v -> {
     Toast.makeText(MainActivity.this, "Button Clicked!", Toast.LENGTH_SHORT).show();
 });</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <h2>3. EditText (User से Text Input लेने के लिए)</h2><ul>
+    <h2>3. EditText (User से Text Input लेने के लिए)</h2><ul>
     <li>  EditText Android में एक UI Component है, जो User से Text Input लेने के लिए इस्तेमाल किया जाता है।</li>
     <li>यह TextView का Subclass है, लेकिन User इसमें Text को Edit कर सकता है।</li>
     <li>यह Forms, Search Box, Username & Password Input, Feedback Forms, और Data Entry Fields के लिए उपयोग किया जाता है।</li></ul>
@@ -464,36 +355,14 @@ button.setOnClickListener(v -> {
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Enter your name" /></pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Example (Java Code में Text को Read करना)</b></p><pre>
+   <p><b>Example (Java Code में Text को Read करना)</b></p><pre>
 EditText editText = findViewById(R.id.editText);
 String userInput = editText.getText().toString();
 Toast.makeText(MainActivity.this, "You entered: " + userInput, Toast.LENGTH_SHORT).show();</pre>
   <h2>4. RadioButton (Multiple Options में से एक चुनने के लिए)</h2><ul>
     <li>RadioButton का उपयोग तब किया जाता है जब User को Multiple Options में से केवल एक चुनना हो।</li>
     <li>RadioButtons हमेशा एक Group में होते हैं और एक समय में केवल एक ही Option Select हो सकता है।</li></ul>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Example (RadioButton in XML)</b></p><pre>
+   <p><b>Example (RadioButton in XML)</b></p><pre>
 &lt;RadioGroup
     android:id="@+id/radioGroup"
     android:layout_width="wrap_content"
@@ -511,17 +380,6 @@ Toast.makeText(MainActivity.this, "You entered: " + userInput, Toast.LENGTH_SHOR
         android:layout_height="wrap_content"
         android:text="Female" />
 &lt;/RadioGroup></pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <p><b>Example (Java Code में Selection को Read करना)</b></b><pre>
 RadioGroup radioGroup = findViewById(R.id.radioGroup);
 int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -530,18 +388,7 @@ Toast.makeText(MainActivity.this, "Selected: " + selectedRadioButton.getText(), 
   <h2>5. CheckBox (Multiple Options Select करने के लिए)</h2><ul>
     <li>Checkbox का उपयोग तब किया जाता है जब User को एक से अधिक Options चुनने होते हैं।</li>
       <li>Example: "Terms & Conditions" Accept करने के लिए।</li></ul>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Example (CheckBox in XML)</b></p><pre>
+   <p><b>Example (CheckBox in XML)</b></p><pre>
 &lt;CheckBox
     android:id="@+id/checkBox"
     android:layout_width="wrap_content"
@@ -552,18 +399,7 @@ CheckBox checkBox = findViewById(R.id.checkBox);
 if (checkBox.isChecked()) {
     Toast.makeText(MainActivity.this, "Checkbox is Checked!", Toast.LENGTH_SHORT).show();
 }</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <h2>6. ImageView (Images को Show करने के लिए)</h2>
+    <h2>6. ImageView (Images को Show करने के लिए)</h2>
   <p>ImageView का उपयोग Screen पर Images Show करने के लिए किया जाता है।</p>
 
 <p><b>Example (ImageView in XML)</b></p><pre>
@@ -575,18 +411,7 @@ if (checkBox.isChecked()) {
   <p><b>Example (Java Code में Image Change करना)</b></p><pre>
 ImageView imageView = findViewById(R.id.imageView);
 imageView.setImageResource(R.drawable.new_image);</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <h2>7. ProgressBar (Loading Show करने के लिए)</h2>
+   <h2>7. ProgressBar (Loading Show करने के लिए)</h2>
   <p>ProgressBar का उपयोग तब किया जाता है जब कोई Task (जैसे File Downloading, Data Loading) चल रहा हो।</p>
   <p>दो प्रकार के ProgressBar होते हैं:</p><ul>
     <li>Indeterminate (Circular) → जब Task का Duration पता नहीं हो।</li>
@@ -597,18 +422,7 @@ imageView.setImageResource(R.drawable.new_image);</pre>
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:visibility="gone" /></pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Example (Java Code में ProgressBar Show/Hide करना)</b></p><pre>
+   <p><b>Example (Java Code में ProgressBar Show/Hide करना)</b></p><pre>
 ProgressBar progressBar = findViewById(R.id.progressBar);
 progressBar.setVisibility(View.VISIBLE);  // Show ProgressBar
 progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
@@ -616,18 +430,7 @@ progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
   <p>Event Handling का मतलब है कि जब User किसी UI Component (जैसे Button, EditText, या Checkbox) से Interaction करता है, तो उस Interaction को सही तरीके से पकड़ने और Response देने की प्रक्रिया। Android में Event Handling का मुख्य उद्देश्य यह है कि User Actions (click, touch, text change, etc.) के बाद App उस Action का सही Response दे सके।</p>
   <h2> Event Handling का तरीका</h2>
   <h3>Event Listener:</h3>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p>Event Handling के लिए Event Listener का उपयोग किया जाता है, जो किसी specific Action (जैसे Button का Click) पर Trigger होता है।</p>
+   <p>Event Handling के लिए Event Listener का उपयोग किया जाता है, जो किसी specific Action (जैसे Button का Click) पर Trigger होता है।</p>
   <ul><li>Listeners के ज़रिए हम Event को listen (sun) कर सकते हैं और उस पर प्रतिक्रिया (response) दे सकते हैं।</li></ul>
   <p><b>उदाहरण के लिए:</b> OnClickListener का उपयोग हम Button के Click Event को Handle करने के लिए करते हैं।</p>
   <h3>Callbacks:</h3>
@@ -635,18 +438,7 @@ progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
   <ul><li>Callback method वह method होती है जो Event के Response में User Interaction के आधार पर कोई Action perform करती है।</li></ul>
   <h2>Types of Event Handling</h2>
   <h3>1. View Event Handling:</h3>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p>View Event Handling का मतलब है कि जब User किसी UI Component (जैसे Button, EditText, RadioButton) से Interaction करता है, तो उसका Event Handle करना।</p>
+    <p>View Event Handling का मतलब है कि जब User किसी UI Component (जैसे Button, EditText, RadioButton) से Interaction करता है, तो उसका Event Handle करना।</p>
     <p><b>उदाहरण:</b> Button का Click Event, TextView का Touch Event, etc.</p>
   <h3>2. Touch Event Handling:</h3>
   <p>Touch Event में Tap, Swipe, Pinch, Zoom जैसे Actions होते हैं। TouchEvent का उपयोग किसी View पर User की Touch Actions को Detect करने के लिए किया जाता है।</p>
@@ -658,17 +450,6 @@ progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
         <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
     </h2>
   <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <br>
     <div class="box" id="box">
       <h2>Request:</h2>
@@ -679,36 +460,14 @@ progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
         <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
     </div>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+    <br>
   <section class="about" id="about">
         <h2>Follow Us</h2>
         <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
     </section>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+   <br>
      <h3>
     <ul>
       <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
@@ -722,18 +481,7 @@ progressBar.setVisibility(View.GONE);     // Hide ProgressBar</pre>
     </ul>
   </h3>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+   <br>
 <script>
 function toggleMenu() {
     const menu = document.getElementById('menu');
