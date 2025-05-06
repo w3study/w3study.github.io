@@ -44,25 +44,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: black;
+            background: black;
+            color: white;
         }
         body h1 {
-            color: black;
+            color: white;
             font-size: 25px;
             margin: auto;
             padding: 10px;
             margin-left: 10px;
             margin-right: 10px;
         }
-    body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+    
     body h2 {
             color: yellow;
             font-size: 20px;
@@ -81,7 +74,7 @@
             margin-right: 10px;
         }
     body p {
-            color: black;
+            color: white;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
@@ -92,7 +85,7 @@
             margin-right: 10px;
         }
   body pre {
-    background-color: black;
+    background-color: #333;
     color: white;
     margin: 10px;
     padding: 10px;
@@ -285,45 +278,7 @@
         .button:hover {
             background: #4a0d8a;
         }
-   /* Footer Ad Styling */
-.footer-ad {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    z-index: 1000;
-}
-
-/* Ad Content */
-.ad-content img {
-    width: 320px;
-    height: 50px;
-}
-
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: -10px;
-    right: 10px;
-    background: none;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    text-align: center;
-    line-height: 20px;
-}
+  
   .details {
     background-color: none;
     color: yellow; 
@@ -358,37 +313,16 @@
         </nav>
     </div>
        <br><br>
-  <!-- Footer Ad Banner -->
-    <div class="footer-ad" id="footerAd">
-        <button class="close-btn" onclick="closeAd()">✖</button>
-        <div class="ad-content">
-            <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-        </div>
-    </div>  <br>
+ 
   <details class="details">
     <summary>Topics</summary>
     <p><a href="#async">Async Task in Hindi</a></p>
     <p><a href="#ad">Advantages of Async Task in Hindi</a></p>
     <p><a href="#dis">Disadvantages of Async Task in Hindi</a></p>
   </details><br><br>
-    <!-- Social bar ads code -->
-  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
-  <h1>Async Task in Hindi (Development of Android Applications)</h1>
+   <h1>Async Task in Hindi (Development of Android Applications)</h1>
   <h2 id="async">Async Task</h2>
-  <!-- Native Banner Ads code -->
-  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
-<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
-  <ul><p><li>AsyncTask Android में background tasks को execute करने और main (UI) thread को update करने के लिए उपयोग किया जाने वाला एक class था।</li></p>
+   <ul><p><li>AsyncTask Android में background tasks को execute करने और main (UI) thread को update करने के लिए उपयोग किया जाने वाला एक class था।</li></p>
 <p><li>यह multithreading को simplify करता था, जिससे long-running tasks को background thread पर execute किया जा सके।</li></p>
 <p><li>AsyncTask का उपयोग मुख्य रूप से network operations, database queries, और file processing जैसे tasks के लिए किया जाता था।</li></p>
 <p><li>इसमें तीन मुख्य methods होती थीं:</li></p>
@@ -396,105 +330,38 @@ doInBackground() – Background में चलने वाले heavy operat
 onPreExecute() – Task शुरू होने से पहले UI पर कुछ दिखाने के लिए उपयोग होता है।<br>
 onPostExecute() – Background task पूरा होने के बाद UI को update करता है।<br>
 <p><li>progressUpdate() method से task के execution के दौरान progress को update किया जा सकता था।</li></p>
-<!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p><li>AsyncTask को main thread से execute किया जाता था लेकिन यह background में काम करता था।</li></p>
+<p><li>AsyncTask को main thread से execute किया जाता था लेकिन यह background में काम करता था।</li></p>
 <p><li>Memory leaks और configuration changes (जैसे screen rotation) को handle करने में समस्याएं होने के कारण इसे deprecated (API 30) कर दिया गया है।</li></p>
 <p><li>अब इसके बजाय Kotlin Coroutines, Executors, और WorkManager का उपयोग करने की सलाह दी जाती है।</li></p>
 <p><li>AsyncTask का issue यह था कि यह activity या fragment के साथ tightly coupled था, जिससे application crash या memory leak हो सकती थी।</li></p>
 <p><li>Modern alternatives अधिक efficient और flexible हैं, जिससे background tasks को manage करना आसान हो गया है।</li></p></ul>
     
   <h2 id="ad">Advantages of Async Task in Hindi</h2>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <ol><p><li><b style="color: blue">Easy to Use –</b> AsyncTask को implement करना आसान था क्योंकि यह background और UI thread के बीच communication को simplify करता था।</li></p>
+   <ol><p><li><b style="color: blue">Easy to Use –</b> AsyncTask को implement करना आसान था क्योंकि यह background और UI thread के बीच communication को simplify करता था।</li></p>
 <p><li><b style="color: blue">Thread Management –</b> यह automatically background में thread manage करता था, जिससे developers को manually threads create और manage करने की जरूरत नहीं थी।</li></p>
 <p><li><b style="color: blue">UI Update Support –</b> AsyncTask background में task execute करने के बाद directly UI update कर सकता था, जिससे manual thread handling की जरूरत नहीं पड़ती थी।</li></p>
 <p><li><b style="color: blue">Less Code Complexity –</b> Traditional threading approaches (जैसे Handler, Looper) की तुलना में AsyncTask कम code में asynchronous tasks को handle कर सकता था।</li></p>
 <p><li><b style="color: blue">Automatic Execution on Background Thread –</b> इसका doInBackground() method automatically एक separate worker thread पर run होता था, जिससे main thread block नहीं होता था।</li></p>
-<!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p><li><b style="color: blue">Progress Updates –</b> onProgressUpdate() method से task के execution के दौरान user को progress दिखाया जा सकता था।</li></p>
+<p><li><b style="color: blue">Progress Updates –</b> onProgressUpdate() method से task के execution के दौरान user को progress दिखाया जा सकता था।</li></p>
 <p><li><b style="color: blue">Cancellation Support –</b> AsyncTask को आसानी से cancel() method से cancel किया जा सकता था, जिससे unnecessary resource usage को रोका जा सकता था।</li></p>
 <p><li><b style="color: blue">No Manual Thread Pooling –</b> Developers को manually thread pool manage करने की जरूरत नहीं होती थी, क्योंकि AsyncTask internally thread pool handle करता था।</li></p>
 <p><li><b style="color: blue">UI Thread Safety –</b> यह onPostExecute() method के जरिए UI पर safe तरीके से changes करने की अनुमति देता था।</li></p>
 <p><li><b style="color: blue">Better than Traditional Threads –</b> यह traditional threads की तुलना में lightweight और memory-efficient था, जिससे small background tasks आसानी से execute हो सकते थे।</li></p></ol>
   
   <h2 id="dis">Disadvantages of Async Task in Hindi</h2>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <ol><p><li><b style="color: blue">Memory Leaks –</b> AsyncTask Activity या Fragment के साथ tightly coupled होता था, जिससे improper handling के कारण memory leaks हो सकते थे।</li></p>
 <p><li><b style="color: blue">Configuration Changes Issue –</b> यदि AsyncTask चल रहा हो और user screen rotate कर दे, तो activity destroy होकर recreate हो जाती थी, जिससे app crash हो सकती थी।</li></p>
 <p><li><b style="color: blue">Thread Pool Limitations –</b> AsyncTask by default एक fixed thread pool का उपयोग करता था, जिससे multiple tasks चलाने पर performance issues आ सकते थे।</li></p>
 <p><li><b style="color: blue">Tightly Coupled with UI –</b> AsyncTask का lifecycle Activity/Fragment के lifecycle पर depend करता था, जिससे unexpected behavior हो सकता था।</li></p>
 <p><li><b style="color: blue">Not Suitable for Long-Running Tasks –</b> यह short background tasks के लिए design किया गया था, लेकिन long-running tasks के लिए यह inefficient था।</li></p>
-<!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p><li><b style="color: blue">Difficult to Manage Multiple AsyncTasks –</b> यदि एक से ज्यादा AsyncTask एक साथ चलाए जाएं, तो proper synchronization करना मुश्किल हो जाता था।</li></p>
+<p><li><b style="color: blue">Difficult to Manage Multiple AsyncTasks –</b> यदि एक से ज्यादा AsyncTask एक साथ चलाए जाएं, तो proper synchronization करना मुश्किल हो जाता था।</li></p>
 <p><li><b style="color: blue">Error Handling Complex था –</b> Background task में errors को handle करना मुश्किल था और proper exception handling के बिना app crash हो सकती थी।</li></p>
 <p><li><b style="color: blue">No Proper Cancellation Handling –</b> AsyncTask को cancel किया जा सकता था, लेकिन proper तरीके से task termination और resource cleanup करना मुश्किल था।</li></p>
 <p><li><b style="color: blue">Blocking UI Issues –</b> अगर AsyncTask को सही से implement नहीं किया जाए, तो यह main thread को भी block कर सकता था, जिससे UI freeze हो सकता था।</li></p>
 <p><li><b style="color: blue">Deprecated in API 30 –</b> Google ने इसे API 30 (Android 11) में deprecated कर दिया और इसके बजाय Kotlin Coroutines, Executors, और WorkManager का उपयोग करने की सलाह दी।</li></p></ol>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br><br><h3><ul>
-      <li><a href="calling_web_services.html">Calling Web Services and Consuming JSON data from web services in Hindi</a></li><br>
-        <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
-    </ul></h3>
+ <br><br>
+<p style="background-color: yellow; border: 2px solid blue; padding: 10px;"><a href="calling_web_services.html">Calling Web Services and Consuming JSON data from web services in Hindi</a></p><br>
+<p style="background-color: yellow; border: 2px solid blue; padding: 10px;"><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></p>
   <br><br>
     <div class="box" id="box">
       <h2>Request:</h2>
@@ -505,36 +372,14 @@ onPostExecute() – Background task पूरा होने के बाद U
         <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
     </div>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+   <br>
   <section class="about" id="about">
         <h2>Follow Us</h2>
         <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
     </section>
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <br>
+ 
    
     <ul>
       <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
@@ -543,17 +388,6 @@ onPostExecute() – Background task पूरा होने के बाद U
       <li><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></li><br>
       <li><a href="apk_file_extension.html">apk file extension in Hindi</a></li><br>
       <li><a href="ui_components.html">UI components in Hindi</a></li><br>
-     <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script> 
       <li><a href="components_for_communication.html">Components for communication in Android in Hindi</a></li><br>
       <li><a href="android_api_levels.html">Android API Levels in Hindi</a></li><br>
       <li><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></li><br>
@@ -562,17 +396,6 @@ onPostExecute() – Background task पूरा होने के बाद U
     </ul>
   
     <br>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
   <br>
 <script>
 function toggleMenu() {
