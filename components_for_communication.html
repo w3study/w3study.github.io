@@ -44,25 +44,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: #333;
+            background: black;
+            color: #ffffff;
         }
         body h1 {
-            color: black;
+            color: white;
             font-size: 25px;
             margin: auto;
             padding: 10px;
             margin-left: 10px;
             margin-right: 10px;
         }
-    body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+    
     body h2 {
             color: red;
             font-size: 20px;
@@ -81,7 +74,7 @@
             margin-right: 10px;
         }
     body p {
-            color: black;
+            color: white;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
@@ -307,24 +300,10 @@
         </nav>
     </div>
        <br><br><br>
-    <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script>
-    <h1>Components for communication in android in Hindi</h1><br><br>
+     <h1>Components for communication in android in Hindi</h1><br><br>
     <h2>Android में Communication Components - Intents और Intent Filters</h2>
-    <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
-<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
-    <p>Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं।</p>
- <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <h2>1. Intent क्या है?</h2>
+      <p>Android में Intents और Intent Filters बहुत महत्वपूर्ण होते हैं क्योंकि ये एक कंपोनेंट से दूसरे कंपोनेंट (Activities, Services, Broadcast Receivers) के बीच कम्युनिकेशन को आसान बनाते हैं।</p>
+<h2>1. Intent क्या है?</h2>
     <p>Intent Android का एक मैकेनिज्म है जो अलग-अलग कंपोनेंट्स के बीच डेटा पास करने और एक दूसरे को एक्टिवेट (launch) करने में मदद करता है।</p>
 
     <h2>Intent के प्रकार</h2>
@@ -335,18 +314,7 @@
 <p>यह तब उपयोग होता है जब हमें यह नहीं पता होता कि कौन सा ऐप या कंपोनेंट कार्य को पूरा करेगा।</p>
 <p>उदाहरण के लिए, अगर हम किसी नंबर पर कॉल करना चाहते हैं, तो हमें यह जानने की जरूरत नहीं कि कौन सा डायलर ऐप यूज होगा।</p>
     <p><b>उदाहरण:</b></p>
- <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <pre>
+ <pre>
 Intent intent = new Intent(Intent.ACTION_DIAL);
 intent.setData(Uri.parse("tel:1234567890"));
 startActivity(intent);</pre>
@@ -355,18 +323,7 @@ startActivity(intent);</pre>
         <p>जब हमें पहले से ही पता होता है कि हमें किस Activity या Component को लॉन्च करना है, तब हम Explicit Intent का उपयोग करते हैं।</p>
             <p>उदाहरण के लिए, हम एक Activity से दूसरी Activity को खोलने के लिए इसका उपयोग कर सकते हैं।</p>
                 <p><b>उदाहरण:</b></p>
- <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <pre>
+   <pre>
 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 startActivity(intent);</pre>
     <h2>2. Intent Filters क्या हैं?</h2>
@@ -376,18 +333,7 @@ startActivity(intent);</pre>
     <p><b>Action:</b> यह वह कार्य को परिभाषित करता है जो Intent करने वाला है (जैसे, android.intent.action.VIEW)।</p>
     <p><b>Category:</b> यह एक अतिरिक्त फ़िल्टर प्रदान करता है जिससे Intent को और अधिक विशिष्ट बनाया जा सकता है।</p>
     <p><b>Data:</b> यह दर्शाता है कि कौन सा डेटा टाइप (MIME type, URI) Intent के साथ उपयोग किया जाएगा।</p>
-     <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>   
-    <p><b>Example:</b> AndroidManifest.xml में Intent Filter जोड़ना</p>
+       <p><b>Example:</b> AndroidManifest.xml में Intent Filter जोड़ना</p>
 
     <pre>
 &lt;activity android:name=".SecondActivity">
@@ -397,17 +343,6 @@ startActivity(intent);</pre>
         &lt;data android:mimeType="text/plain" />
     &lt;/intent-filter>
 &lt;/activity></pre>
- <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script><br><br>
   <br><br>
     <div class="box" id="box">
       <h2>Request:</h2>
@@ -418,36 +353,14 @@ startActivity(intent);</pre>
         <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
     </div>
     <br><br>
-     <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <br><br>
+     <br><br>
   <section class="about" id="about">
         <h2>Follow Us</h2>
         <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
     </section>
     <br><br>
-     <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-      <br><br>
+        <br><br>
        <h3>
     <ul>
       <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
@@ -461,18 +374,7 @@ startActivity(intent);</pre>
     </ul>
   </h3>
     <br><br>
-     <!-- Banner ads 320 x 50 -->
-  <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script><br><br>
-<script>
+ <script>
 function toggleMenu() {
     const menu = document.getElementById('menu');
     const hamburger = document.querySelector('.hamburger-icon');
