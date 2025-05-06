@@ -44,25 +44,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: #333;
+            background: #000000;
+            color: #ffffff;
         }
         body h1 {
-            color: black;
+            color: #ffffff;
             font-size: 25px;
             margin: auto;
             padding: 10px;
             margin-left: 10px;
             margin-right: 10px;
         }
-    body h1 {
-            color: black;
-            font-size: 25px;
-            margin: auto;
-            padding: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
+   
     body h2 {
             color: yellow;
             font-size: 20px;
@@ -81,7 +74,7 @@
             margin-right: 10px;
         }
     body p {
-            color: black;
+            color: #ffffff;
             font-size: 17px;
             white-space: pre-wrap; /* Automatically wrap content */
             word-wrap: break-word; /* Break long words if needed */
@@ -92,7 +85,7 @@
             margin-right: 10px;
         }
   body pre {
-    background-color: black;
+    background-color: #333;
     color: white;
     margin: 10px;
     padding: 10px;
@@ -354,26 +347,8 @@
         </nav>
     </div>
        <br><br>
-  <!-- Footer Ad Banner -->
-    <div class="footer-ad" id="footerAd">
-        <button class="close-btn" onclick="closeAd()">✖</button>
-        <div class="ad-content">
-            <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-        </div>
-    </div>  <br>
-<!-- Social bar ads code -->
-  <script type='text/javascript' src='//pl26031405.effectiveratecpm.com/7b/4c/b8/7b4cb870ac7147d5478518f701201132.js'></script> 
-  <details class="details">
+ 
+    <details class="details">
     <summary>Topics</summary>
     <p><a href="#adpters">Adpters</a></p>
     <p><a href="#types">Types of Adptors</a></p>
@@ -383,27 +358,12 @@
   <p>Android में Adapters का उपयोग ListView, GridView, RecyclerView जैसे UI Components में Data Binding के लिए किया जाता है। Adapters डेटा को Convert करके View में Show करते हैं।</p>
 
   <h2 id="adpters"style="font-size: 25px">What is an Adapter? - Adapter क्या है?</h2>
-     <!-- Native Banner Ads code -->
-  <script async="async" data-cfasync="false" src="//pl26031307.effectiveratecpm.com/dc9dfe240e118cb55706785c2817f852/invoke.js"></script>
-<div id="container-dc9dfe240e118cb55706785c2817f852"></div>
-  <ul><li>Adapter एक Bridge की तरह काम करता है, जो Data Source (Array, Database, API) को UI Components (ListView, RecyclerView, etc.) से जोड़ता है।</li>
+      <ul><li>Adapter एक Bridge की तरह काम करता है, जो Data Source (Array, Database, API) को UI Components (ListView, RecyclerView, etc.) से जोड़ता है।</li>
     <li>यह डेटा को Dynamically Load & Manage करता है।</li>
     <li>Android में BaseAdapter, ArrayAdapter, CursorAdapter, RecyclerView.Adapter आदि प्रमुख Adapters हैं।</li>
     <li>ListView और GridView के लिए ArrayAdapter/BaseAdapter, जबकि RecyclerView के लिए RecyclerView.Adapter उपयोग किया जाता है।</li></ul>
   <h2 id="types" style="font-size: 25px">Types of Adptor - Adptor के प्रकार</h2>
-  <h2>1. BaseAdapter (Custom Adapter for Complex UI)</h2>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <ul>
+  <  <ul>
     <li>BaseAdapter का उपयोग तब किया जाता है जब हमें Custom ListView/GridView बनानी हो।</li>
     <li>यह Adapter Multiple Views और Custom Layouts को Support करता है।</li>
     <li>हमें इसे Manually Implement करना पड़ता है और getView() Method Override करना होता है।</li></ul>
@@ -415,18 +375,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"/></pre>
   <p><b>Step 2: Create Custom Adapter (Java)</b></p>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p style="text-align: right; padding: 0px;">java</p><pre>
+   <p style="text-align: right; padding: 0px;">java</p><pre>
 public class MyAdapter extends BaseAdapter {
     private Context context;
     private String[] data;
@@ -455,18 +404,7 @@ public class MyAdapter extends BaseAdapter {
         return convertView;
     }
 }</pre>
-  <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-  <p><b>Step 3: Set Adapter in Activity</b></p>
+ <p><b>Step 3: Set Adapter in Activity</b></p>
   <p style="text-align: right; padding: 0px;">java</p><pre>
 ListView listView = findViewById(R.id.listView);
 String[] items = {"Item 1", "Item 2", "Item 3"};
@@ -476,17 +414,6 @@ listView.setAdapter(new MyAdapter(this, items));</pre>
     <li>ArrayAdapter का उपयोग Simple Lists (Strings, Integers, etc.) के लिए किया जाता है।</li>
     <li>यह Default Layouts (e.g., android.R.layout.simple_list_item_1) को Support करता है।</li>
     <li>यह डेटा को Auto-Bind कर सकता है, इसलिए इसे कम कोडिंग की आवश्यकता होती है।</li></ul>
-<!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
 <h3>Implementation of ArrayAdapter (Short Code Example)</h3>
   <p style="text-align: right; padding: 0px;">java</p><pre>
 String[] items = {"Apple", "Banana", "Orange"};
@@ -494,36 +421,14 @@ ListView listView = findViewById(R.id.listView);
 
 ArrayAdapter&lt;String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
 listView.setAdapter(adapter);</pre>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <h2 id="view" style="font-size: 25px;">ViewHolder Pattern (Optimization in Adapters)</h2>
+     <h2 id="view" style="font-size: 25px;">ViewHolder Pattern (Optimization in Adapters)</h2>
     <ul>
       <li>ViewHolder UI Components को Efficiently Manage करने के लिए उपयोग किया जाता है।</li>
       <li>यह ListView/GridView में Scrolling Performance Improve करता है।</li>
       <li>यह Unnecessary findViewById() Calls को Reduce करता है।</li>
       <li>RecyclerView.Adapter में अनिवार्य रूप से उपयोग किया जाता है।</li></ul>
     <h3>Implementation of ViewHolder in BaseAdapter</h3>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <p style="text-align: right; padding: 0px;">java</p><pre>
+     <p style="text-align: right; padding: 0px;">java</p><pre>
 public class MyAdapter extends BaseAdapter {
     private Context context;
     private String[] data;
@@ -552,18 +457,7 @@ public class MyAdapter extends BaseAdapter {
         return convertView;
     }
 }</pre>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    
+   
     <h3>
         <li><a href="android_notes_page.html">Development of Android Applications Notes in Hindi</a></li>
     </h3>
@@ -577,17 +471,6 @@ public class MyAdapter extends BaseAdapter {
         <p><b><span style="color: blue">Whatsapp: </span></b>+91 8057754706</p>
     </div>
     <br>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
     <br>
   <section class="about" id="about">
         <h2>Follow Us</h2>
@@ -595,18 +478,7 @@ public class MyAdapter extends BaseAdapter {
         <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
     </section>
     <br>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <br>
+      <br>
      <h3>
     <ul>
       <li><a href="introduction_to_android.html">Introduction to Android in Hindi</a></li><br>
@@ -623,18 +495,7 @@ public class MyAdapter extends BaseAdapter {
     </ul>
   </h3>
     <br>
-    <!-- Banner ads code 320x50 -->
-            <script type="text/javascript">
-	atOptions = {
-		'key' : '6a0cb1725eb9bcdb3cd1454f8d39358a',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/6a0cb1725eb9bcdb3cd1454f8d39358a/invoke.js"></script>
-    <br>
+   <br>
 <script>
 function toggleMenu() {
     const menu = document.getElementById('menu');
