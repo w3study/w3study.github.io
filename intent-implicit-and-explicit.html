@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What is Intent in Android? - Android में Intent क्या है?">
+    <meta name="keywords" content="What is Intent in Android? - Android में Intent क्या है?">
+    <meta name="author" content="Deepanshu Ranjan">
+    
+    <!-- SEO Code -->
+    <link rel="canonical" href="https://w3study.github.io/">
+    <!-- schema meta data code --> 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "What is Intent in Android? - Android में Intent क्या है?",
+  "url": "https://w3study.github.io/",
+  "description": "What is Intent in Android? - Android में Intent क्या है?",
+  "inLanguage": "hi",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "w3study"
+  }
+}
+    </script> 
+  <!-- Open Graph Meta Tags for Social Media and Google -->
+<meta property="og:title" content="What is Intent in Android? - Android में Intent क्या है?" />
+<meta property="og:description" content="What is Intent in Android? - Android में Intent क्या है?" />
+<meta property="og:image" content="https://w3study.github.io/favicon.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<meta property="og:url" content="https://w3study.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:updated_time" content="2025-04-02" />
+<meta property="last-modified" content="April 2025" /> 
+  <title>What is Intent in Android? - Android में Intent क्या है?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #ffffff;
+        }
+        body h1 {
+            color: white;
+            font-size: 25px;
+            margin: 10px;
+            padding: 10px;
+        }
+    body h2 {
+            color: yellow;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin: 10px;
+            padding: 10px;
+        }
+    body h3 {
+            color: red;
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px;
+        }
+    body p {
+            color: #ffffff;
+            font-size: 17px;
+            white-space: pre-wrap; /* Automatically wrap content */
+            word-wrap: break-word; /* Break long words if needed */
+            margin: 15px;
+            padding: 8px;
+        }
+  
+        header {
+            background: red;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h2 {
+            margin: 0;
+            color: yellow;
+            font-size: 30px;
+        }
+    header h3 {
+        color: white;
+        font-size: 25px;
+    }
+ /* menu container*/
+         .menu-container {
+            position: relative;
+            color: #000000;
+            background-color: #0000ff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger-icon {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #3f3fff;
+            border-radius: 5px;
+        }        
+  @media screen and (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                background-color: #333;
+                text-align: center;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                display: block;
+                padding: 12px;
+            }
+    .box {
+      width: 90%;
+    }
+        }
+       section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        section p {
+            font-size: 1rem;
+            color: #000000;
+            line-height: 1.6;
+        }
+  .about {
+            background-color: #ffff;
+            padding: 40px 30px;
+        }
+        .about h2 {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 30px;
+            color: #0000FF;
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+   .box {
+    background-color: red;
+     width: 90%;
+    padding: 10px;
+    border: 3px solid #0000ff;
+     margin: auto;
+    border-radius: 3px;
+    
+}
+    .box h2 {
+        color: blue;
+        text-align: center;
+        margin: 10px;
+        font-size: 20px;
+    }
+  .box p {
+    color: white;
+    font-size: 17;
+  }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            color: white;
+            margin: 0;
+        }
+    .details {
+    background-color: #282828;
+    color: yellow; 
+    border-radius: 4px;
+    border: 2px solid blue;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .details p {
+    padding: 8px;
+  }
+  .details a {
+    color: skyblue;
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none;
+  }
+.details a:hover {
+color: red;
+}  
+   html {
+    scroll-behavior: smooth;
+  }
+  li {
+    padding: 2px;
+   margin: 10px;
+  }
+#bodies a {
+     color: blue;
+    font-size: 20px;
+    text-decoration: none;
+  }
+ #bodies a:hover {
+    color: red;
+  }
+   #searchBox {
+    display: flex;
+  margin: 10px;
+     color: black;
+     background: #ddd;
+     width: 85%;
+    padding: 10px;
+     margin: auto;
+  font-size: 16px;
+     border: 3px solid red;
+     border-radius: 4px;
+}
+#searchResults { 
+  color: blue;
+  margin-top: 10px;
+  background: #add;
+  width: 88%;
+  padding: 0px;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+#searchResults div {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-color: blue;
+}
+
+#searchResults div a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+
+#searchResults div:hover {
+  background: skyblue;
+}
+ 
+    </style>
+    <!-- Prism CSS -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+
+<!-- Prism JS -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+
+<!-- SQL language support -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+
+<!-- dark theme for background Prism JS -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h2>Welcome to</h2>
+        <h3>w3study.github.io</h3>
+    </header>
+<div class="menu-container">
+        <div class="hamburger-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav id="menu" class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="advertise_with_us.html">Advertise with Us</a>
+                <a href="notes.html">Notes in Hindi</a>
+        </nav>
+    </div>
+       <br><br>
+  <input type="text" id="searchBox" placeholder="Search Notes..." onkeyup="searchNotes()">
+<div id="searchResults"></div>
+
+  <br>
+  <details class="details">
+    <summary>Topics</summary>
+    <p><a href="#fun">Function of Management in Hindi</a></p>
+    </details><br><br>
+  <h1>What is Intent in Android? -  Android में Intent क्या है?</h1>
+
+  <ul><li>Intent Android का एक object होता है जो एक component से दूसरे component को message भेजने का काम करता है।</li>
+
+    <li>Intent का use Activities, Services, और Broadcast Receivers को start करने के लिए किया जाता है।</li>
+
+    <li>Intent दो प्रकार के होते हैं –</li>
+
+    <ul><li>Explicit Intent (जब हम clearly बताते हैं कि कौन सी activity start करनी है)</li>
+
+      <li>Implicit Intent (जब हम सिर्फ action बताते हैं, और system खुद decide करता है कौन सा component handle करेगा)</li></ul>
+
+      <li>Intent में हम extra data भी भेज सकते हैं, जैसे एक activity से दूसरी activity में username भेजना।</li>
+
+    <li>Intent को startActivity() method से call किया जाता है, जिससे नया screen open होता है।</li>
+
+    <li>Intent में action, data और category जैसे parts हो सकते हैं, जो बताते हैं कि क्या करना है और किसके साथ करना है।</li>
+
+    <li>BroadcastReceiver में भी Intent का इस्तेमाल होता है, ताकि हम कोई message पूरे system में broadcast कर सकें (जैसे battery low का alert).</li>
+
+    <li>Intent एक important part है Android app के अंदर communication के लिए, जिससे अलग-अलग हिस्से आपस में जुड़े रहते हैं।</li></ul>
+  <br><hr>
+  <h2>Implicit Intent in Hindi:</h2>
+  <ul><li>Implicit Intent का मतलब होता है किसी specific component को directly ना बताकर, सिर्फ action बताना।</li>
+
+  <li>System खुद decide करता है कि इस action को handle करने के लिए कौन सी app या component सही है।</li>
+
+  <li>इसका use तब होता है जब हम चाहते हैं कि कोई काम करें, जैसे – call करना, message भेजना, photo लेना या browser खोलना।</li>
+
+  <li>Implicit Intent किसी दूसरी app के component को भी trigger कर सकता है।</li>
+
+  <li><b>Example:</b> अगर हम किसी website का URL खोलना चाहते हैं:</li></ul>
+  <pre><code class="language-xml">Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("https://www.google.com"));
+</code></pre>
+  <ul><li>Implicit Intent में सिर्फ action और data दिया जाता है, ना कि class name.</li>
+
+  <li>System उस intent को handle करने वाली apps की list दिखा सकता है (chooser dialog).</li>
+
+  <li>Common actions होते हैं – ACTION_VIEW, ACTION_DIAL, ACTION_SEND आदि।</li>
+
+  <li>Intent Filters की मदद से app यह बता सकती है कि वह किस type का implicit intent handle कर सकती है।</li>
+
+  <li>Implicit Intent flexible होता है, क्योंकि यह हमें दूसरी apps के साथ interact करने का मौका देता है।</li></ul>
+  <br><hr>
+  <h2>Explicit Intent in Hindi:</h2>
+  <ul><li>Explicit Intent का मतलब होता है किसी खास (specific) component को target करना।</li>
+
+    <li>इसका use तब किया जाता है जब हमें अपनी app की किसी particular activity, service या broadcast receiver को launch करना हो।</li>
+
+    <li>इसमें हम clearly बताते हैं कि कौन सी class को open करना है।</li>
+
+    <li>ये intent mostly दो activities के बीच communication के लिए use होता है।</li>
+
+    <li><b>Example:</b> अगर आपकी app में दो screens हैं (MainActivity और SecondActivity), तो MainActivity से SecondActivity को open करने के लिए Explicit Intent का use होगा।</li>
+
+    <li>Intent constructor में हम context और target class का नाम पास करते हैं।</li>
+    
+    <li>Intent के साथ data भी भेज सकते हैं जैसे name, id आदि –
+intent.putExtra("username", "Deepanshu");</li>
+
+    <li>Intent को start करने के लिए startActivity(intent) method use होता है।</li>
+
+    <li>ये केवल हमारी खुद की app के components के लिए होता है, बाहर की apps को target नहीं करता।</li>
+
+    <li>Explicit Intent पूरी तरह safe और fast होता है, क्योंकि हमें पता होता है हम किसको call कर रहे हैं।</li></ul>
+    <br><hr> <hr>
+  <br>
+    <br>
+  <section class="about" id="about">
+        <h2>Follow Us</h2>
+        <a href="https://www.facebook.com/share/1Kpe6MYFJT/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50"></a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" width="50"></a>
+    </section>
+    <br>
+  <div id="bodies">
+    <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="imed_notes_page.html">IMED Notes in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="introduction_to_android.html">Introduction to Android in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="dalvik_virtual_machine.html">Dalvik Vartual Machine in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="basic_building_blocks.html">Basic Building Blocks in Android in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="fundamentals_of_android.html">Fundamentals of android in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="apk_file_extension.html">apk file extension in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="ui_components.html">UI components in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="components_for_communication.html">Components for communication in Android in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="android_api_levels.html">Android API Levels in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="setting_up_development_environment_android.html">Setting up development environment in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="manifest-xml.html">Manifest.xml in Hindi</a></p>
+      <p style="background-color: yellow; text-align: center; border: 2px solid blue"><a href="resources_&_r-java.html">Resources & R.java in Hindi</a></p>
+  </div> 
+    <br>
+  <script>
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburger = document.querySelector('.hamburger-icon');
+    menu.classList.toggle('active');
+    
+    if (menu.classList.contains('active')) {
+        hamburger.innerHTML = '&#10006;'; // Cross icon (X)
+    } else {
+        hamburger.innerHTML = '&#9776;'; // Three lines icon
+    }
+}
+  function closeAd() {
+    document.getElementById("footerAd").style.display = "none";
+}
+  // search function code
+document.addEventListener("DOMContentLoaded", async function () {
+    let pages = [];
+
+    // 🔹 Step 1: Sabhi <a> tags ko scan karo (Home Page se)
+    //document.querySelectorAll("a").forEach(link => {
+      //  let url = link.getAttribute("href");
+        //let title = link.innerText || url;
+        //if (url && !url.startsWith("http")) {
+          //  pages.push({ title, url });
+      //  }
+   // });
+
+    // 🔹 Step 2: Agar "notes.html" ya koi aur index page ho, toh usko bhi scan karo
+    let extraPages = ["all_notes.html"]; // Yaha aur bhi pages add kar sakte ho jo aur links contain karte hain
+    for (let page of extraPages) {
+        await fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                let tempDiv = document.createElement("div");
+                tempDiv.innerHTML = html;
+                tempDiv.querySelectorAll("a").forEach(link => {
+                    let url = link.getAttribute("href");
+                    let title = link.innerText || url;
+                    if (url && !url.startsWith("http")) {
+                        pages.push({ title, url });
+                    }
+                });
+            })
+            .catch(error => console.error(`Error loading ${page}:`, error));
+    }
+
+    // 🔹 Step 3: Search Function
+    window.searchNotes = function () {
+        let query = document.getElementById('searchBox').value.toLowerCase();
+        let resultsDiv = document.getElementById('searchResults');
+        resultsDiv.innerHTML = "";
+
+        if (query === "") return;
+
+        let filteredResults = pages.filter(page =>
+            page.title.toLowerCase().includes(query) ||
+            page.url.toLowerCase().includes(query)
+        );
+
+        if (filteredResults.length === 0) {
+            resultsDiv.innerHTML = "<p style='color: black;'>No results found</p>";
+            return;
+        }
+
+        filteredResults.forEach(page => {
+            let resultItem = document.createElement("div");
+            resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+            resultsDiv.appendChild(resultItem);
+        });
+    };
+});
+ document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+
+          // Remove hash from URL
+          if (history.pushState) {
+            history.pushState(null, null, window.location.pathname);
+          }
+        }
+      });
+    });
+  });
+
+    </script>
+    <footer>
+      <p><small>&copy; 2025 w3study.github.io All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
