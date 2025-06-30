@@ -29,7 +29,6 @@
     background: none;
     font-family: sans-serif;
     text-align: center;
-    box-sizing: border-box;
   ">
     <!-- Top Right Ad Badge -->
     <div style="
@@ -48,7 +47,7 @@
       Ad
     </div>
       <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
-        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:0auto;width:100%;">
+        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:auto; width:100%;">
         <div style="font-size:14px; font-weight:bold; color:black;">${ad.text}</div>
       </a>
     </div>
