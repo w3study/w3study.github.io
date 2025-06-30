@@ -23,7 +23,7 @@
    <div style="
     position: relative;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 0;
     width: 300px;
     margin: 0 auto;
     background: #f9f9f9;
