@@ -25,7 +25,7 @@
     border: none;
     padding: 0;
     width: 80%;
-    max-width: 100%;
+    max-width: 80%;
     margin: 0 auto;
     background: #ddd;
     font-family: sans-serif;
