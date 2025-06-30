@@ -34,8 +34,8 @@
     <!-- Top Right Ad Badge -->
     <div style="
       position: absolute;
-      top: 5px;
-      right: 5px;
+      top: 0;
+      right: 0;
       background: #ffcc00;
       color: #000;
       font-size: 10px;
