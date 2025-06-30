@@ -36,6 +36,7 @@
       position: absolute;
       top: 0;
       right: 0;
+      margin: 0;
       background: #ffcc00;
       color: #000;
       font-size: 10px;
