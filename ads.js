@@ -48,7 +48,7 @@
     </div>
       <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
         <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:auto; width:100%;">
-        <div style="font-size:14px; font-weight:bold; color:black;">${ad.text}</div>
+        <div style="font-size:14px; font-weight:bold; color:black; display:none;">${ad.text}</div>
       </a>
     </div>
   `);
