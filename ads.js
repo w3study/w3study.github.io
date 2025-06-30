@@ -6,14 +6,14 @@
       text: "Follow Me!"
     },
     {
-      img: "https://yourdomain.com/ads/ad2.jpg",
-      url: "https://example.com/offer2",
-      text: "🔥 Deal 2 - Limited Time!"
+      img: "https://w3study.github.io/assets/images/insta-dp-deepanshu.jpg",
+      url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
+      text: "Follow Me!"
     },
     {
-      img: "https://yourdomain.com/ads/ad3.jpg",
-      url: "https://example.com/offer3",
-      text: "⭐ Exclusive Deal 3!"
+      img: "https://w3study.github.io/assets/images/insta-dp-deepanshu.jpg",
+      url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
+      text: "Follow Me!"
     }
   ];
 
@@ -26,7 +26,7 @@
     padding: 0;
     width: 80%;
     margin: 0 auto;
-    background: none;
+    background: #ddd;
     font-family: sans-serif;
     text-align: center;
   ">
