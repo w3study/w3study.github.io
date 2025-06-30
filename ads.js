@@ -24,7 +24,7 @@
     position: relative;
     border: none;
     padding: 0;
-    width: 300px;
+    width: 100%;
     margin: 0 auto;
     background: #f9f9f9;
     font-family: sans-serif;
