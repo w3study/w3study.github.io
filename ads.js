@@ -22,7 +22,7 @@
   document.write(`
    <div style="
     position: relative;
-    border: 1px solid #ddd;
+    border: none;
     padding: 0;
     width: 300px;
     margin: 0 auto;
