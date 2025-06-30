@@ -20,17 +20,35 @@
   var ad = ads[Math.floor(Math.random() * ads.length)];
 
   document.write(`
+   <div style="
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    font-family: sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+  ">
+    <!-- Top Right Ad Badge -->
     <div style="
-      border:1px solid #ddd;
-      padding:10px;
-      max-width:300px;
-      text-align:center;
-      background:#f9f9f9;
-      font-family:sans-serif;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ffcc00;
+      color: #000;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 3px;
+      z-index: 10;
     ">
-      <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
-        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:0 auto 8px;">
-        <div style="font-size:14px; font-weight:bold;">${ad.text}</div>
+      Ad
+    </div>
+      <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;margin:auto;">
+        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:auto;">
+        <div style="font-size:14px; font-weight:bold; color:black;">${ad.text}</div>
       </a>
     </div>
   `);
