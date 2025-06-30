@@ -1,7 +1,7 @@
 (function(){
   var ads = [
     {
-      img: "https://w3study.github.io/assets/images/IMG-20250628-WA0016.jpg",
+      img: "https://w3study.github.io/assets/images/insta-dp-deepanshu.jpg",
       url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
       text: "Follow Me!"
     },
