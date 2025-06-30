@@ -297,7 +297,7 @@ color: red;
    .ad-container {
     width: 45%;
     height: 100%;
-    padding: 10px;
+    padding: 0;
     padding-bottom: 0;
     padding-top: 0;
     margin: auto;
@@ -312,24 +312,25 @@ color: red;
   }
   #ad-wrapper {
   position: relative;
-  background: white;
-  padding: 10px;
+  background: none;
+  padding: 0;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
   margin: 10px auto;
   width: 50%; /* ya jitna chaho */
-  border: 1px solid #ddd;
+  border: none;
   font-family: Arial, sans-serif;
 }
 
 #ad-label {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
+  z-index: 200;
 }
 
 /* Badge style */
