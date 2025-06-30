@@ -25,6 +25,7 @@
     border: none;
     padding: 0;
     width: 80%;
+    max-width: 100%;
     margin: 0 auto;
     background: #ddd;
     font-family: sans-serif;
@@ -47,7 +48,7 @@
       Ad
     </div>
       <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;" class="no-style">
-        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:auto; width:100%;">
+        <img src="${ad.img}" alt="Ad" style="max-width:100%; height:auto; display:block; margin:auto; width:100%; max-height:250px;">
         <div style="font-size:14px; font-weight:bold; color:black; display:none;">${ad.text}</div>
       </a>
     </div>
