@@ -1,19 +1,19 @@
 (function(){
   var ads = [
     {
-      img: "https://w3study.github.io/assets/images/IMG-20250628-WA0016.jpg",
+      img: "https://w3study.github.io/assets/images/insta-add.gif",
       url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
       text: "Follow Me!"
     },
     {
-      img: "https://yourdomain.com/ads/ad2.jpg",
-      url: "https://example.com/offer2",
+      img: "https://w3study.github.io/assets/images/fb-pic-deepanshu.jpg",
+      url: "https://www.facebook.com/share/19MEJCU9fj/",
       text: "🔥 Deal 2 - Limited Time!"
     },
     {
-      img: "https://yourdomain.com/ads/ad3.jpg",
-      url: "https://example.com/offer3",
-      text: "⭐ Exclusive Deal 3!"
+      img: "https://w3study.githbu.io/assets/images/insta-dp-deepanshu.jpg",
+      url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
+      text: "Follow Me!"
     }
   ];
 
@@ -73,6 +73,7 @@
           font-size: 14px;
           font-weight: bold;
           color: black;
+          display: none;
         ">
           ${ad.text}
         </div>
