@@ -67,7 +67,7 @@
         margin-top:5px;
         font-size:14px;
         font-weight:bold;
-       
+        display: none;
       ">
         ${ad.text}
       </a>
