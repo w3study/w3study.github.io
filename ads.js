@@ -17,65 +17,59 @@
     }
   ];
 
-  var ad = ads[Math.floor(Math.random() * ads.length)];
+    var ad = ads[Math.floor(Math.random() * ads.length)];
 
   document.write(`
     <div style="
-      position: relative;
-      border: none;
-      padding: 0;
-      width: 80%;
-      margin: 10px auto;
-      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       font-family: sans-serif;
-      text-align: center;
-      oncontextmenu="return false;"
-    >
-      <!-- Top Right Ad Badge -->
+      background: #fff;
+      margin: 10px auto;
+    ">
       <div style="
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: #ffcc00;
-        color: #000;
-        font-size: 10px;
-        font-weight: bold;
-        padding: 2px 6px;
-        border-radius: 3px;
-        z-index: 10;
-      ">
-        Ad
-      </div>
-
-      <a href="${ad.url}" target="_blank" style="
-        text-decoration: none;
-        color: inherit;
+        position: relative;
         display: inline-block;
-        width: 100%;
-      ">
-        <img src="${ad.img}" alt="Ad"
-          draggable="false"
-          oncontextmenu="return false;"
-          style="
-            width: 100%;
-            
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            max-height: 250px;
-            object-fit: contain;
-            -webkit-user-drag: none;
-            user-select: none;
-          "
-        >
+        line-height: 0;
+      " oncontextmenu="return false;">
+        <!-- Ad Badge over image -->
         <div style="
-          font-size: 14px;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          background: #ffcc00;
+          color: #000;
+          font-size: 10px;
           font-weight: bold;
-          color: black;
-          display: none;
+          padding: 2px 6px;
+          border-radius: 3px;
+          z-index: 10;
         ">
-          ${ad.text}
+          Ad
         </div>
+ <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
+          <img src="${ad.img}" alt="Ad"
+            draggable="false"
+            oncontextmenu="return false;"
+            style="
+              display: block;
+              max-width: 100%;
+              height: auto;
+              -webkit-user-drag: none;
+              user-select: none;
+            ">
+        </a>
+      </div>
+      <a href="${ad.url}" target="_blank" style="
+        text-decoration:none;
+        color:black;
+        display:block;
+        margin-top:5px;
+        font-size:14px;
+        font-weight:bold;
+      ">
+        ${ad.text}
       </a>
     </div>
   `);
