@@ -27,7 +27,7 @@
       width: 300px;
       max-width: 100%;
       margin: 20px auto;
-      background: #f9f9f9;
+      background: none;
       font-family: sans-serif;
       text-align: center;
       box-sizing: border-box;"
