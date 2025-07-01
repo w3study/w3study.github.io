@@ -19,42 +19,42 @@
 
     var ad = ads[Math.floor(Math.random() * ads.length)];
 
-  document.write(`
+    document.write(
     <div style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: sans-serif;
-      background: #fff;
+      position: relative;
+      border: none;
+      padding: 0;
+      width: 80%;
+      max-width: 300px;
       margin: 10px auto;
-    ">
+      background: white;
+      font-family: sans-serif;
+      text-align: center;
+      oncontextmenu="return false;"
+    >
+      <!-- Top Right Ad Badge -->
       <div style="
-        position: relative;
-        display: inline-block;
-        line-height: 0;
-      " oncontextmenu="return false;">
-        <!-- Ad Badge over image -->
-        <div style="
-          position: absolute;
-          top: 0;
-          right: 0;
-          background: #ffcc00;
-          color: #000;
-          font-size: 10px;
-          font-weight: bold;
-          padding: 2px 6px;
-          border-radius: 3px;
-          z-index: 10;
-        ">
-          Ad
-        </div>
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #ffcc00;
+        color: #000;
+        font-size: 10px;
+        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
+        z-index: 10;
+      ">
+        Ad
+      </div>
  <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
           <img src="${ad.img}" alt="Ad"
             draggable="false"
             oncontextmenu="return false;"
             style="
               display: block;
-              max-width: 100%;
+              width: 100%;
+              max-width: 300px;
               height: auto;
               -webkit-user-drag: none;
               user-select: none;
@@ -68,6 +68,7 @@
         margin-top:5px;
         font-size:14px;
         font-weight:bold;
+        display: none;
       ">
         ${ad.text}
       </a>
