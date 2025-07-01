@@ -60,17 +60,6 @@
             ">
         </a>
       </div>
-      <a href="${ad.url}" target="_blank" style="
-        text-decoration:none;
-        color:black;
-        display:block;
-        margin-top:5px;
-        font-size:14px;
-        font-weight:bold;
-        display: none;
-      ">
-        ${ad.text}
-      </a>
-    </div>
+    
   `);
 })();
