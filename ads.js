@@ -24,10 +24,10 @@
       position: relative;
       border: none;
       padding: 0;
-      width: 100%;
+      width: 80%;
       max-width: 80%;
       margin: 10px auto;
-      background: none;
+      background: white;
       font-family: sans-serif;
       text-align: center;
       oncontextmenu="return false;"
