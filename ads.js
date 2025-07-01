@@ -46,7 +46,7 @@
     ">
       Ad
     </div>
- <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
+ <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;" class="no-style">
           <img src="${ad.img}" alt="Ad"
             draggable="false"
             oncontextmenu="return false;"
