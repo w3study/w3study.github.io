@@ -19,34 +19,33 @@
 
     var ad = ads[Math.floor(Math.random() * ads.length)];
 
-    document.write(
+    document.write(`
+  <div style="
+    position: relative;
+    border: none;
+    padding: 10px;
+    width: 300px;
+    max-width: 100%;
+    margin: 20px auto;
+    background: #f9f9f9;
+    font-family: sans-serif;
+    text-align: center;
+   ">
+    <!-- Top Right Ad Badge -->
     <div style="
-      position: relative;
-      border: none;
-      padding: 0;
-      width: 80%;
-      max-width: 500px;
-      margin: 10px auto;
-      background: white;
-      font-family: sans-serif;
-      text-align: center;
-      oncontextmenu="return false;"
-    >
-      <!-- Top Right Ad Badge -->
-      <div style="
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: #ffcc00;
-        color: #000;
-        font-size: 10px;
-        font-weight: bold;
-        padding: 2px 6px;
-        border-radius: 3px;
-        z-index: 10;
-      ">
-        Ad
-      </div>
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: #ffcc00;
+      color: #000;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 3px;
+      z-index: 10;
+    ">
+      Ad
+    </div>
  <a href="${ad.url}" target="_blank" style="text-decoration:none;color:inherit;">
           <img src="${ad.img}" alt="Ad"
             draggable="false"
