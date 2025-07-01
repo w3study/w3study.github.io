@@ -59,6 +59,7 @@
           oncontextmenu="return false;"
           style="
             width: 100%;
+            max-width: 80%;
             height: auto;
             display: block;
             margin: 0 auto;
