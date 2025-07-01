@@ -11,9 +11,9 @@
       text: "🔥 Deal 2 - Limited Time!"
     },
     {
-      img: "https://w3study.githbu.io/assets/images/insta-dp-deepanshu.jpg",
-      url: "https://www.instagram.com/deepanshuranjan80?igsh=dHhmOGR0cmZxaGRi",
-      text: "Follow Me!"
+       img: "https://w3study.github.io/assets/images/fb-pic-deepanshu.jpg",
+      url: "https://www.facebook.com/share/19MEJCU9fj/",
+      text: "🔥 Deal 2 - Limited Time!"
     }
   ];
 
