@@ -22,22 +22,21 @@
   document.write(`
     <div style="
       position: relative;
-      border: 1px solid #ddd;
+      border: none;
       padding: 0;
-      width: 300px;
-      max-width: 100%;
-      margin: 20px auto;
+      width: 100%;
+      max-width: 80%;
+      margin: 10px auto;
       background: none;
       font-family: sans-serif;
       text-align: center;
-      box-sizing: border-box;"
       oncontextmenu="return false;"
     >
       <!-- Top Right Ad Badge -->
       <div style="
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 0;
+        right: 0;
         background: #ffcc00;
         color: #000;
         font-size: 10px;
@@ -62,7 +61,7 @@
             width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 8px;
+            margin: 0 auto;
             max-height: 250px;
             object-fit: contain;
             -webkit-user-drag: none;
