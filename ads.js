@@ -25,7 +25,6 @@
       border: none;
       padding: 0;
       width: 80%;
-      max-width: 80%;
       margin: 10px auto;
       background: white;
       font-family: sans-serif;
@@ -59,7 +58,7 @@
           oncontextmenu="return false;"
           style="
             width: 100%;
-            max-width: 80%;
+            
             height: auto;
             display: block;
             margin: 0 auto;
