@@ -295,6 +295,6 @@
   }
   @media (max-width: 640px) {
     .style {
-      flex: 1 1 calc(40% - 10px);
+      flex: 1 1 calc(85% - 10px);
       }
     }
