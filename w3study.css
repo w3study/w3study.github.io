@@ -253,6 +253,7 @@
     }
     #searchResults {
       width: 95%;
+      padding: 10px;
       height: 15.4rem;
     }
   }
